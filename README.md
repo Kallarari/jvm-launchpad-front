@@ -312,11 +312,66 @@ const fetchData = async () => {
 };
 ```
 
+### Passo 7: Usar o Estado Global (Zustand)
+
+Para acessar e modificar o estado global da aplicação:
+
+```tsx
+import { useAppStore } from '../../../infrastructure';
+import type { User, Squad } from '../../../infrastructure';
+
+const MeuComponente = () => {
+  // Acessar estado
+  const { user, squad } = useAppStore();
+  
+  // Acessar actions
+  const { setUser, setSquad } = useAppStore();
+
+  // Exemplo de uso
+  const handleLogin = async (userData: User) => {
+    try {
+      // Lógica de login
+      setUser(userData);
+    }
+  };
+
+  return (
+    <div>
+      {user && <p>Bem-vindo, {user.name}!</p>}
+      {squad && <p>Squad: {squad.name}</p>}
+    </div>
+  );
+};
+```
+
+### Passo 8: Usar Tipos Globais
+
+Para usar os tipos globais (User, Squad, SquadMember):
+
+```tsx
+import type { User, Squad, SquadMember } from '../../../infrastructure';
+
+// Exemplo em uma função
+const processUser = (user: User) => {
+  // Sua lógica aqui
+};
+
+// Exemplo em um componente
+interface UserCardProps {
+  user: User;
+  squad?: Squad;
+}
+```
+
 ## 📐 Arquitetura do Projeto
 
 O projeto segue uma **arquitetura hexagonal orientada a features**, onde:
 
-- **`infrastructure/`**: Contém configurações compartilhadas como tema, API, e utilitários
+- **`infrastructure/`**: Contém configurações compartilhadas como tema, API, tipos globais, estado global (Zustand) e utilitários
+  - `types/`: Tipos TypeScript globais (User, Squad, SquadMember)
+  - `store/`: Estado global gerenciado com Zustand
+  - `theme/`: Tema padrão do projeto
+  - `api/`: Configuração do cliente HTTP (Axios)
 - **`feature-*/`**: Cada feature é um módulo independente com:
   - `router/`: Rotas específicas da feature
   - `pages/`: Páginas da feature (com context, interfaces e estilos)
@@ -414,11 +469,13 @@ Este é um projeto colaborativo. Ao criar uma nova feature:
 
 - O tema do projeto está centralizado em `src/infrastructure/theme/`
 - A configuração da API está em `src/infrastructure/api/config.ts`
+- Os tipos globais (User, Squad, SquadMember) estão em `src/infrastructure/types/`
+- O estado global (Zustand) está em `src/infrastructure/store/` e pode ser acessado via `useAppStore()`
 - Use `styles.module.ts` para estilos de páginas
 - Use `styles.ts` (sem module) para estilos de componentes
 - Sempre crie interfaces TypeScript para props e dados
 - Utilize contextos React para gerenciamento de estado local da feature
+- Use o estado global (Zustand) para dados que precisam ser compartilhados entre múltiplas features
+- Para dados específicos de uma feature, prefira usar Context API local
 
 ---
-
-**Desenvolvido com ❤️ para o JVM Launchpad**
