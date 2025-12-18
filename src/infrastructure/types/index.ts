@@ -17,7 +17,6 @@ export interface User {
   pictureLink: string;
   role: 'admin' | 'programer' | 'leader' | 'applicant';
 }
-
 export interface SquadMember {
   id: string;
   name: string;
@@ -36,4 +35,3 @@ export interface Squad {
   createdAt: string;
   updatedAt: string;
 }
-

@@ -278,15 +278,15 @@ Adicione a rota da nova feature no arquivo `src/router/index.tsx`:
 
 ```tsx
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { ExempleRoutes } from '../feature-exemple/router';
+import { ExampleRoutes } from '../feature-example/router';
 import { NomeDaFeatureRoutes } from '../feature-nome-da-feature/router';
 
 export const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<ExemplePage />} />
-        <Route path="/*" element={<ExempleRoutes />} />
+        <Route path="/" element={<ExamplePage />} />
+        <Route path="/*" element={<ExampleRoutes />} />
         <Route path="/*" element={<NomeDaFeatureRoutes />} />
       </Routes>
     </BrowserRouter>

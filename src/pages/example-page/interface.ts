@@ -1,8 +1,8 @@
-export interface ExemplePageProps {
+export interface ExamplePageProps {
   title?: string;
 }
 
-export interface ExemplePageData {
+export interface ExamplePageData {
   id: string;
   name: string;
   description?: string;
