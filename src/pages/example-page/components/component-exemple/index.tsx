@@ -1,4 +1,3 @@
-import type { ComponentExampleProps } from './interface';
 import {
   ComponentContainer,
   ComponentTitle,
