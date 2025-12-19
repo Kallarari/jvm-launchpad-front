@@ -7,6 +7,7 @@ import { Squad5Routes } from './rotas-squad-5';
 import { Squad6Routes } from './rotas-squad-6';
 import ExamplePage from '../pages/example-page';
 
+
 export const AppRouter = () => {
   return (
     <BrowserRouter>
@@ -16,7 +17,7 @@ export const AppRouter = () => {
         <Route path="/" element={<Squad2Routes />} />
         <Route path="/" element={<Squad3Routes />} />
         <Route path="/" element={<Squad4Routes />} />
-        <Route path="/" element={<Squad5Routes />} />
+        <Route path="/acervo/*" element={<Squad5Routes />} />
         <Route path="/" element={<Squad6Routes />} />
         <Route path="/*" element={<ExamplePage />} />
       </Routes>
