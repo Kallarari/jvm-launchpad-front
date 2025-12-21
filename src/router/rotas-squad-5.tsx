@@ -1,10 +1,12 @@
 import { Route } from "react-router-dom";
-
+import { AcervoConteudo } from "../squad5/pages/acervoconteudo";
+import { ManageAcervo } from "../squad5/pages/manageacervo";
 export const Squad5Routes = () => {
   return  (
     <>
-      <Route path="/Squad" element={<h1>Squad exemple page</h1>} />
-      <Route path="/Squad-exemple" element={<h1>Squad exemple page</h1>} />
+      <Route path="/acervo" element={<AcervoConteudo/>} />
+      <Route path="/acervo/manage" element={<ManageAcervo/>} />
     </>
+    
   );
 };

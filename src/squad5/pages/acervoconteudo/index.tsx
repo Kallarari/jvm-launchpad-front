@@ -8,6 +8,7 @@ export function AcervoConteudo() {
             <Body>
                 <h1>teste acervo</h1>
             
-            </Body>        
+        </Body>    
+        
     )
 }
