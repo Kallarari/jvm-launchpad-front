@@ -1,0 +1,46 @@
+import { Body } from "../../components/Body";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
+
+import {
+  HeaderContent,
+  UserBadage,
+  UserInfo,
+  Avatar,
+  SubHeader,
+} from "../../components/Header/styles";
+import UserImage from "../../Assets/Ellipse.svg";
+
+export function AcervoConteudo() {
+  return (
+    <>
+      <Header>
+        <HeaderContent />
+        <UserBadage>
+          <UserInfo>
+            <span>Lindon Jhnson</span>
+            <a href="/perfil">editar perfil</a>
+          </UserInfo>
+          <Avatar src={UserImage} alt="Lindonjhnson" />
+        </UserBadage>
+        <SubHeader>
+          <span>Classificação de squads</span>
+        </SubHeader>
+
+        <SubHeader $variant="secondary">
+          <span>Classificação de devs</span>
+        </SubHeader>
+
+        <SubHeader $variant="tertiary">
+          <span>Material de apoio</span>
+        </SubHeader>
+      </Header>
+      <Body>
+        <h1> 😎 </h1>
+      </Body>
+      <Footer>
+        <span>all right reserved to JVM launchpad</span>
+      </Footer>
+    </>
+  );
+}
