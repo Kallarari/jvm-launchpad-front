@@ -1,11 +1,24 @@
 import { Route } from "react-router-dom";
 import { SquadConfigPage } from "../pages/SquadConfigPage";
+import { PrivateRoute } from "../squad-4-src/components/PrivateRoute";
+import { MainLayout } from "../squad-4-src/components/MainLayout";
+import "../squad-4-src/styles/reset.css";
 
 export const Squad4Routes = () => {
   return (
     <>
-      <Route path="/squad-config" element={<SquadConfigPage />} />
-      <Route path="/Squad-exemple" element={<h1>Squad exemple page</h1>} />
+      <Route element={<MainLayout />}>
+        <Route
+          path="/squad-config"
+          element={
+            <PrivateRoute role="admin">
+              <SquadConfigPage />
+            </PrivateRoute>
+          }
+        />
+
+        <Route path="/squad-exemple" element={<h1>Squad exemple page</h1>} />
+      </Route>
     </>
   );
 };
