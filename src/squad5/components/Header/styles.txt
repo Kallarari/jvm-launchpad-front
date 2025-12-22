@@ -1,0 +1,149 @@
+import styled from "styled-components";
+import HeaderLogo from "../../Assets/HeaderContent.svg";
+
+export const HeaderContainer = styled.header`
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  margin: 0;
+  padding: 0;
+
+  border-bottom: 1px solid hsla(0, 0%, 27%, 1);
+  
+  width: 100vw;
+  height: 92px;
+  
+  background-color: hsla(0, 0%, 5%, 0.6);
+  
+`;
+
+export const HeaderContent = styled.div`
+  position: relative;
+
+  width: 346px;
+  height: 44px;
+  top: 28px;
+  left: 303px;
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-image: url(${HeaderLogo});
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+
+export const UserBadage = styled.div`
+  position: relative;
+  width: 250px;
+  /* height: 60px; */
+  /* top: 16px; */
+  margin-top: -16px;
+  left: 880px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px;
+`;
+
+export const Avatar = styled.img`
+  width: 50px;
+  height: 50px;
+
+  /* margin-top: 22px; */
+  border-radius: 50%;
+  object-fit: cover;
+  /* border: 2px solid hsla(0, 0%, 27%, 1); */
+`;
+export const UserInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  span {
+    color: hsla(0, 0%, 100%, 1);
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: -7%;
+  }
+
+  a {
+    color: hsla(0, 0%, 100%, 1);
+    font-weight: 400;
+    font-size: 15px;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: -7%;
+    text-align: right;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: hsl(0, 0%, 90%);
+    }
+  }
+`;
+
+export const SubHeader = styled.button<{$variant?: 'primary' | 'secondary' | 'tertiary'}>`
+    
+    display: flex;
+    align-items:center;
+    justify-content: center;
+
+    position: fixed ;
+    background-color:hsla(355, 78%, 56%, 1);
+    text-decoration: none;
+    width: 194px;
+    height: 33px;
+    transform: 0 deg;
+    opacity: 1;
+    top: 93px;
+    left: 390px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    /* outline: none; */
+    border: none;
+    cursor: pointer;
+
+    ${({ $variant }) =>
+    $variant === 'secondary' &&
+    `
+      left: 631px;
+      
+    `}
+
+    ${({ $variant }) =>
+    $variant === 'tertiary' &&
+    `
+      left: 877px;
+      
+    `}
+    
+    span{
+        display:block;
+        color: aliceblue;
+        font-family: Goldman;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1;
+        letter-spacing: -0.7%;
+        text-align: center;
+       
+
+    }
+
+`

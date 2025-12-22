@@ -21,5 +21,8 @@ export const BodyContainer = styled.body`
     background-attachment: fixed;
     background-color: #000000;
     background-position: center;
+
+    font-family: "Goldman", sans-serif;
+    -webkit-font-smoothing: antialiased;
     
 `
