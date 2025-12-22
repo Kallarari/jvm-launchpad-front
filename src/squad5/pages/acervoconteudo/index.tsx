@@ -11,6 +11,7 @@ import {
   SubHeader,
 } from "../../components/Header/styles";
 import UserImage from "../../Assets/Ellipse.svg";
+import { Card } from "../../components/Card";
 
 export function AcervoConteudo() {
   return (
@@ -35,7 +36,10 @@ export function AcervoConteudo() {
       </SubHeaderWrapper>
 
       <Body>
-        <h1> 😎 </h1>
+        <Card
+          title="Live start"
+          subtitle="Live start"
+        />
       </Body>
       <Footer>
         <span>all right reserved to JVM launchpad</span>
