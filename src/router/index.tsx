@@ -7,6 +7,7 @@ import { Squad5Routes } from "./rotas-squad-5";
 import { Squad6Routes } from "./rotas-squad-6";
 import ExamplePage from "../pages/example-page";
 
+
 export const AppRouter = () => {
   return (
     <BrowserRouter>
