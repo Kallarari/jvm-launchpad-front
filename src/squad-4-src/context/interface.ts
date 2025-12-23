@@ -1,8 +1,4 @@
-export interface User {
-  id: string;
-  name: string;
-  role: "admin" | "user";
-}
+import type { User } from "../interfaces/user";
 
 export interface AuthContextType {
   user: User | null;

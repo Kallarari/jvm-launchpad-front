@@ -17,7 +17,7 @@ export const Squad4Routes = () => {
           }
         />
 
-        <Route path="/squad-exemple" element={<h1>Squad exemple page</h1>} />
+        <Route path="/not-authorized" element={<h1>Nao autorizado</h1>} />
       </Route>
     </>
   );
