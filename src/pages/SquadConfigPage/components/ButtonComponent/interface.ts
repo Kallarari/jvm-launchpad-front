@@ -1,3 +1,8 @@
+export type ButtonSize = "sm" | "md";
+
 export interface ButtonProps {
-  button?: string;
+  icon?: string;
+  label?: string;
+  size?: ButtonSize;
+  onClick?: () => void;
 }
