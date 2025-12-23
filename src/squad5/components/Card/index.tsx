@@ -1,5 +1,19 @@
-import { CardContainer, CardTitle, CardSubtitle } from "./styles";
+import {
+  CardContainer,
+  CardTitle,
+  CardSubtitle,
+  CardHeader,
+  CardHeaderTitle,
+  CardHeaderActions,
+  CardHeaderButton,
+  TertiaryCardContainer,
+  PlusButton,
+  QuaternaryCardContainer,
+  QuaternaryCardTitle
+} from "./styles";
+
 import type { CardProps } from "./types";
+import { FaEye, FaTrash, FaPlus } from "react-icons/fa";
 
 export const Card = ({ title, subtitle }: CardProps) => (
   <CardContainer>
@@ -10,21 +24,32 @@ export const Card = ({ title, subtitle }: CardProps) => (
 
 export const SecondaryCard = ({ title, subtitle }: CardProps) => (
   <CardContainer $secondary>
-    <CardTitle>{title}</CardTitle>
+    <CardTitle $secondary>{title}</CardTitle>
     <CardSubtitle>{subtitle}</CardSubtitle>
+    <CardHeader>
+      <CardHeaderTitle>Live start</CardHeaderTitle>
+      <CardHeaderActions>
+        <CardHeaderButton>
+          <FaEye />
+        </CardHeaderButton>
+        <CardHeaderButton>
+          <FaTrash />
+        </CardHeaderButton>
+      </CardHeaderActions>
+    </CardHeader>
   </CardContainer>
 );
 
-export const TertiaryCard = ({ title, subtitle }: CardProps) => (
-  <CardContainer $secondary>
-    <CardTitle>{title}</CardTitle>
-    <CardSubtitle>{subtitle}</CardSubtitle>
-  </CardContainer>
+export const TertiaryCard = () => (
+  <TertiaryCardContainer>
+    <PlusButton>
+      <FaPlus />
+    </PlusButton>
+  </TertiaryCardContainer>
 );
 
-export const QuaternaryCard = ({ title, subtitle }: CardProps) => (
-  <CardContainer $secondary>
-    <CardTitle>{title}</CardTitle>
-    <CardSubtitle>{subtitle}</CardSubtitle>
-  </CardContainer>
+export const QuaternaryCard = ({ title }: { title: string }) => (
+  <QuaternaryCardContainer>
+    <QuaternaryCardTitle>{title}</QuaternaryCardTitle>
+  </QuaternaryCardContainer>
 );

@@ -17,3 +17,10 @@ export async function postAcervo(acervo: IAcervo): Promise<IHttpResponse<IAcervo
 
     return response
 }
+
+export const cardsMock = [
+  { type: "primary", title: "Card 1", subtitle: "Sub 1" },
+  { type: "secondary", title: "Live start", subtitle: "Live start" },
+  { type: "tertiary", title: "Card 3", subtitle: "Sub 3" },
+  { type: "quaternary", title: "Card 4", subtitle: "Sub 4" },
+];
