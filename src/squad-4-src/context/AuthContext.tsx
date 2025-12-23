@@ -1,17 +1,18 @@
-import { createContext, useContext, useState, type ReactNode } from "react";
-import type { AuthContextType, User } from "./interface";
+import { createContext, useContext, type ReactNode } from "react";
+import { usersMock } from "../mocks/users.mock";
+import type { User } from "../interfaces/user";
+import type { AuthContextType } from "./interface";
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [user] = useState<User | null>({
-    id: "u1",
-    name: "Joao Vitor Minosso",
-    role: "admin",
-  });
+  const firstAdmin: User | null =
+    usersMock.find((user) => user.role === "admin") || null;
 
   return (
-    <AuthContext.Provider value={{ user }}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ user: firstAdmin }}>
+      {children}
+    </AuthContext.Provider>
   );
 };
 
