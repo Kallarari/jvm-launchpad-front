@@ -27,12 +27,10 @@ const LandingPage = () => {
           </Title>
 
           <ButtonGroup>
-            {/* Botão Cadastrar: Goldman, 13px, Branco */}
-            <Button font="goldman" size={16} textColor="white">
+            <Button font="inter" size={16} textColor="white">
               Cadastrar
             </Button>
-            
-            {/* Botão Login: Goldman, 13px, Branco, Variante arredondada (opcional) */}
+
             <Button font="goldman" size={13} textColor="white">
               Login
             </Button>

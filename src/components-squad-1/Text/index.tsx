@@ -26,7 +26,7 @@ interface TextProps extends React.HTMLAttributes<HTMLElement> {
   size?: keyof typeof SIZES;       
   font?: keyof typeof FONT_FAMILIES; 
   color?: keyof typeof CUSTOM_COLORS | string; 
-  weight?: number | string; 
+  weight?: number | string;
 }
 
 export const Text = React.forwardRef<HTMLElement, TextProps>(({ 
