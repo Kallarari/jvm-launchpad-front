@@ -15,11 +15,9 @@ import {
 const LandingPage = () => {
   return (
     <Container>
-
-
-      {/* Conteúdo Principal */}
-      <Content>
         <Background />
+      <Content>
+        
         <HeroSection>
           {/* Tagzinha de "Sistema Online" se houver */}
           
@@ -29,8 +27,15 @@ const LandingPage = () => {
           </Title>
 
           <ButtonGroup>
-            <Button>Cadastrar</Button>
-            <Button>Login</Button>
+            {/* Botão Cadastrar: Goldman, 13px, Branco */}
+            <Button font="goldman" size={16} textColor="white">
+              Cadastrar
+            </Button>
+            
+            {/* Botão Login: Goldman, 13px, Branco, Variante arredondada (opcional) */}
+            <Button font="goldman" size={13} textColor="white">
+              Login
+            </Button>
           </ButtonGroup>
         </HeroSection>
 

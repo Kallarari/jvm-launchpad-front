@@ -82,7 +82,6 @@ export const ButtonGroup = styled.div`
   margin-top: 1rem;
 `;
 
-// Container para a área da direita (ícones JS/TS e Code Snippet)
 export const VisualContent = styled.div`
   position: relative;
   display: flex;

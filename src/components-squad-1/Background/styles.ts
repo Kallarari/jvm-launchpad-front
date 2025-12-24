@@ -16,7 +16,7 @@ export const BackgroundWrapper = styled.div`
   align-items: flex-start; 
 `;
 
-// 2. NOVO: Um container que simula a tela de 1920px
+// container que simula a tela de 1920px
 export const CentralizedContainer = styled.div`
   position: relative; 
   width: 100%;
@@ -26,7 +26,7 @@ export const CentralizedContainer = styled.div`
   /* border: 1px solid green; */
 `;
 
-// Mantém o Grid
+// Grid
 export const GridImg = styled.img`
   position: absolute;
   top: 10%;
@@ -39,7 +39,6 @@ export const GridImg = styled.img`
   object-fit: contain;
 `;
 
-//
 const BaseGlow = styled.img`
   position: absolute;
   mix-blend-mode: screen;

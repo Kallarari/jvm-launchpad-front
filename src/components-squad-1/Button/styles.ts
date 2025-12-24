@@ -1,40 +1,47 @@
 import styled, { css } from 'styled-components';
-import { theme } from '../../infrastructure';
+import { theme } from '../../infrastructure'; // O import está aqui
 
-// Definimos a tipagem das props exclusivas do estilo
 interface ButtonContainerProps {
-  $variant?: 'default' | 'rounded'; // 'rounded' seria para o caso do Login
+  $variant?: 'default' | 'rounded';
 }
 
 export const ButtonContainer = styled.button<ButtonContainerProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-    padding: ${theme.spacing.sm} ${theme.spacing.lg};
+  
+  /* Aqui usamos o 'theme' do import */
+  padding: ${theme.spacing.sm} ${theme.spacing.lg};
+  
   width: 100%; 
-  
-  font-family: ${theme.fonts.primary};
-  font-size: ${theme.fontSizes.md};
-  font-weight: 700; /* Bold */
-  text-transform: uppercase;
-  
   background-color: ${theme.colors.danger};
-  color: ${theme.colors.white || '#ff0000ff'};
   border: none;
   
+  /* O cursor e transições que estavam antes */
   cursor: pointer;
   transition: filter 0.2s, transform 0.2s;
+  text-transform: uppercase; 
 
-  ${({ $variant, theme }) => {
+  &:hover {
+    filter: brightness(0.9);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  /* CORREÇÃO AQUI EMBAIXO: */
+  /* Removemos ', theme' dos parênteses. Agora ele usa o theme importado lá em cima. */
+  ${({ $variant }) => {
     if ($variant === 'rounded') {
       return css`
         border-radius: 50px; 
       `;
     }
-    // Estilo padrão (pode ser o shape "folha" ou borda padrão do seu design)
+    // Shape padrão
     return css`
-      border-radius: ${theme.borderRadius?.md || '8px'}; 
-         border-radius: 16px 0 16px 0; 
+      border-radius: 16px 0 16px 0; 
     `;
   }}
 `;
