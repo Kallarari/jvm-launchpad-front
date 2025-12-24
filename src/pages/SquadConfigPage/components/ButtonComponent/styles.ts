@@ -1,17 +1,19 @@
 import styled from "styled-components";
+import "../../../../squad-4-src/styles/fonts.css"
 import { Icon } from "@iconify/react";
 import { theme } from "../../../../infrastructure";
 import type { ButtonSize } from "./interface";
-interface StyledButtonProps{
+interface StyledButtonProps {
   size: ButtonSize;
 }
 
 export const StyledIcon = styled(Icon)`
-  width: 30px;
-  height: 30px;
+  width: 53px;
+  height: 53px
 `;
 
 export const StyledButton = styled.button<StyledButtonProps>`
+  
   background-color: ${theme.colors.danger};
   color: ${theme.colors.white};
 
@@ -29,8 +31,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
   border: none;
   border-radius: ${theme.borderRadius.lg};
 
-  font-family: ${theme.fonts.primary};
-  font-size: ${theme.fontSizes["3xl"]};
+  font-family: 'Goldman', sans-serif;
+  font-size: 20px; 
   font-weight: 400;
 
   * {
