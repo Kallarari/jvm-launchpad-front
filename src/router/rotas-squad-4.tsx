@@ -3,6 +3,7 @@ import { SquadConfigPage } from "../pages/SquadConfigPage";
 import { PrivateRoute } from "../squad-4-src/components/PrivateRoute";
 import { MainLayout } from "../squad-4-src/components/MainLayout";
 import "../squad-4-src/styles/reset.css";
+import { PointsManagementPage } from "../pages/PointsManagementPage";
 
 export const Squad4Routes = () => {
   return (
@@ -13,6 +14,15 @@ export const Squad4Routes = () => {
           element={
             <PrivateRoute role="admin">
               <SquadConfigPage />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/points-management"
+          element={
+            <PrivateRoute role="admin">
+              <PointsManagementPage />
             </PrivateRoute>
           }
         />
