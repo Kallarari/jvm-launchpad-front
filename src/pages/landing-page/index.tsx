@@ -1,4 +1,5 @@
 import { Background } from "../../components-squad-1/Background";
+import { Header } from "../../components-squad-1/Header";
 import { Button } from "../../components-squad-1/Button/Button";
 
 
@@ -16,6 +17,7 @@ const LandingPage = () => {
   return (
     <Container>
         <Background />
+        <Header />
       <Content>
         
         <HeroSection>
@@ -27,7 +29,7 @@ const LandingPage = () => {
           </Title>
 
           <ButtonGroup>
-            <Button font="inter" size={16} textColor="white">
+            <Button font="goldman" size={13} textColor="white">
               Cadastrar
             </Button>
 
