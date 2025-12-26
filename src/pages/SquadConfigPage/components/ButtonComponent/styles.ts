@@ -5,6 +5,7 @@ import { theme } from "../../../../infrastructure";
 import type { ButtonSize } from "./interface";
 interface StyledButtonProps {
   size: ButtonSize;
+  sizeHeight: ButtonSize;
 }
 
 export const StyledIcon = styled(Icon)`
@@ -18,7 +19,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   color: ${theme.colors.white};
 
   width: ${({ size }) => (size === "sm" ? "161px" : "223px")};
-  height: 74px;
+  height: ${({ sizeHeight }) => (sizeHeight === "sm"? "46px" : "74px")};
 
   display: flex;
   align-items: center;
