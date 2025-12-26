@@ -1,10 +1,15 @@
 import type { ButtonProps } from "./interface";
 import { StyledButton, StyledIcon } from "./styles";
 
-export const ButtonComponent = ({ icon, label, size = "sm", sizeHeight = "md", onClick }: ButtonProps) => {
+export const ButtonComponent = ({
+  icon,
+  label,
+  size = "sm",
+  onClick,
+}: ButtonProps) => {
   return (
     <>
-      <StyledButton size={size} sizeHeight={sizeHeight} onClick={onClick}>
+      <StyledButton size={size} onClick={onClick}>
         {icon && <StyledIcon icon={icon} />}
         {label && <span>{label}</span>}
       </StyledButton>
@@ -12,14 +17,13 @@ export const ButtonComponent = ({ icon, label, size = "sm", sizeHeight = "md", o
   );
 };
 
-
 export const BackButton = () => {
   return (
     <>
       <ButtonComponent icon="ep:back" />
     </>
   );
-}
+};
 
 // Quando for utilizar, os respectivos icons são
 
