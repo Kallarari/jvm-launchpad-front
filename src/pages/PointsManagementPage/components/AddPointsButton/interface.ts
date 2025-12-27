@@ -1,1 +1,4 @@
-//Aqui sera onde voce colocara as interfaces do AddPointsButton
+export interface AddPointsProps {
+  label?: string;
+  onClick?: () => void;
+}
