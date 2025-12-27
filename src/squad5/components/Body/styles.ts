@@ -26,3 +26,11 @@ export const BodyContainer = styled.body`
     -webkit-font-smoothing: antialiased;
     
 `
+
+export const CardsRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  justify-content: center;
+  width: 100%;
+`;

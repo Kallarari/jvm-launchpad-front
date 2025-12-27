@@ -17,3 +17,4 @@ export async function postAcervo(acervo: IAcervo): Promise<IHttpResponse<IAcervo
 
     return response
 }
+
