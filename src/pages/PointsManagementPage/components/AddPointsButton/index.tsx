@@ -1,5 +1,12 @@
-import { Teste } from "./styles";
+import { AddPointsStyled } from "./styles";
+import type { AddPointsProps } from "./interface";
 
-export const AddPointsButton = () => {
-  return <Teste> oi tchau pagina 2</Teste>;
+export const AddPointsButton = ({ label = "+10", onClick }: AddPointsProps) => {
+  return (
+    <>
+      <AddPointsStyled onClick={onClick}>
+        {label && <span>{label}</span>}
+      </AddPointsStyled>
+    </>
+  );
 };
