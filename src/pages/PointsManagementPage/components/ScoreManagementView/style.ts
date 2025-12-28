@@ -2,6 +2,13 @@ import styled from "styled-components";
 
 export const ScoreManagementWrap = styled.div``;
 
+export const MemberNameStyled = styled.div`
+  flex: 0.5;
+`;
+export const MemberPointsStyled = styled.div`
+  flex: 1.5;
+`;
+
 export const ScoreManagementStyled = styled.div`
   background-color: rgba(255, 255, 255, 0.2);
   color: #fff;
