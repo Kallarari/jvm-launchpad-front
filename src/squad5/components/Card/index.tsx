@@ -1,3 +1,4 @@
+import { Icon } from "@iconify/react";
 import {
   CardContainer,
   CardTitle,
@@ -13,37 +14,36 @@ import {
 } from "./styles";
 
 import type { CardProps } from "./types";
-import { FaEye, FaTrash, FaPlus } from "react-icons/fa";
 
-export const Card = ({ title, subtitle }: CardProps) => (
-  <CardContainer>
+export const Card = ({ title, subtitle, backgroundImage }: CardProps) => (
+  <CardContainer backgroundImage={backgroundImage}>
     <CardTitle>{title}</CardTitle>
     <CardSubtitle>{subtitle}</CardSubtitle>
   </CardContainer>
 );
 
 export const SecondaryCard = ({ title, subtitle }: CardProps) => (
-  <CardContainer $secondary>
+  <CardContainer >
     <CardTitle $secondary>{title}</CardTitle>
     <CardSubtitle>{subtitle}</CardSubtitle>
     <CardHeader>
       <CardHeaderTitle>Live start</CardHeaderTitle>
       <CardHeaderActions>
         <CardHeaderButton>
-          <FaEye />
+          <Icon icon="mdi:eye" width="22px" height="15px" />
         </CardHeaderButton>
         <CardHeaderButton>
-          <FaTrash />
+          <Icon icon="mdi:trash-can" width="18" height="18" />
         </CardHeaderButton>
       </CardHeaderActions>
     </CardHeader>
   </CardContainer>
 );
 
-export const TertiaryCard = () => (
+export const TertiaryCard = ({onClick}: Pick<CardProps, 'onClick'> ) => (
   <TertiaryCardContainer>
-    <PlusButton>
-      <FaPlus />
+    <PlusButton onClick={onClick}>
+      <Icon icon="mingcute:plus-fill" width="50" height="50" />
     </PlusButton>
   </TertiaryCardContainer>
 );

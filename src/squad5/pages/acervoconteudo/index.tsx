@@ -10,17 +10,25 @@ import {
   SubHeader,
 } from "../../components/Header/styles";
 import UserImage from "../../Assets/Ellipse.svg";
-import { Card, SecondaryCard,  TertiaryCard, QuaternaryCard } from "../../components/Card";
+import { Card } from "../../components/Card";
 import { BodyContainer, CardsRow } from "../../components/Body/styles";
+import type { IAcervo, IHttpResponse } from "../../interface";
+import { useEffect, useState } from "react";
+import { getAcervo } from "../../mock";
 
-const cardsMock = [
-  { type: "primary", title: "Live Start", subtitle: "Live Start" },
-  { type: "secondary", title: "Live Start", subtitle: "Live Start" },
-  { type: "tertiary", title: "Live Start", subtitle: "Live Start" },
-  { type: "quaternary", title: "Preview", subtitle: "Live Start"},
-  ];
 
 export function AcervoConteudo() {
+
+  const [acervoLista, setAcervoLista] = useState<IHttpResponse<IAcervo[]> | null>(null)
+
+  useEffect(  () => {
+    const listAcervo = async () => {
+      setAcervoLista( await getAcervo())
+    }
+    listAcervo()
+  },[])
+
+  
   return (
     <>
       <Header>
@@ -44,21 +52,12 @@ export function AcervoConteudo() {
 
       <BodyContainer>
         <CardsRow>
-          {cardsMock.map((card, idx) => {
-            if (card.type === "primary") {
-              return <Card key={idx} title={card.title} subtitle={card.subtitle} />;
-            }
-            if (card.type === "secondary") {
-              return <SecondaryCard key={idx} title={card.title} subtitle={card.subtitle} />;
-            }
-            if (card.type === "tertiary") {
-              return <TertiaryCard key={idx} />;
-            }
-              if (card.type === "quaternary") {
-              return <QuaternaryCard key={idx} title={card.title} />;
-            }
-            return null;
-          })}
+          {!!acervoLista && 
+            acervoLista.body.map(({id, titulo, subTitulo}) => 
+              <Card key={id } title={titulo} subtitle={subTitulo} />
+            )
+          }
+            
         </CardsRow>
       </BodyContainer>
       <Footer>

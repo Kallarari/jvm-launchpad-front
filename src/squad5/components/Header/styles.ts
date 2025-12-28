@@ -25,7 +25,8 @@ export const HeaderWrapper = styled.div`
   
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: safe center;
+  gap: 23%;
   
   position: relative;
 `;

@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import jvmLaunchpad from "../../Assets/jvm-launchpad.png";
 
-export const CardContainer = styled.div<{$secondary?:boolean}>`
+export const CardContainer = styled.div<{backgroundImage?:string}>`
   width: 249px;
   height: 321px;
   border-radius: 10px;
-  background-image: url(${jvmLaunchpad});
+  background-image: url(${prop=> prop.backgroundImage ? prop.backgroundImage : jvmLaunchpad });
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

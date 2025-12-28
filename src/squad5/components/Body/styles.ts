@@ -2,7 +2,7 @@ import styled from "styled-components";
 import image from '../../Assets/Brackground.png'
 
 
-export const BodyContainer = styled.body`
+export const BodyContainer = styled.main`
     margin: 0;
     padding: 0;
 
