@@ -19,7 +19,7 @@ export async function getSquadsMock(): Promise<Squad[]> {
       name: "Squad 2",
       dailyTime: "18:00",
       preferredShift: "Tarde",
-      members: [usersMock[5], usersMock[6], usersMock[7]],
+      members: [usersMock[5], usersMock[7]],
       squadPoints: 285,
     },
     {
@@ -36,7 +36,7 @@ export async function getSquadsMock(): Promise<Squad[]> {
       dailyTime: "08:00",
       preferredShift: "Manhã",
       members: [usersMock[11], usersMock[12], usersMock[13]],
-      squadPoints: 285,
+      squadPoints: 685,
     },
     {
       id: "5",

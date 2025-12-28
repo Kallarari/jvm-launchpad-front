@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Squad } from "../../../../squad-4-src/interfaces/squad";
 import type { User } from "../../../../squad-4-src/interfaces/user";
 import { ButtonComponent } from "../ButtonComponent";
@@ -15,6 +15,29 @@ export const SquadEditionModal = ({
   onSave,
 }: SquadEditionModalProps) => {
   const [members, setMembers] = useState<User[]>(squad.members);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setVisible(true), 10);
+  }, []);
+
+  const hasChanges = JSON.stringify(members) !== JSON.stringify(squad.members);
+
+  const animateClose = (callback: () => void) => {
+    setVisible(false);
+    setTimeout(callback, 450);
+  };
+
+  const handleClose = () => {
+    if (hasChanges) {
+      const leave = window.confirm(
+        "Você tem alterações não salvas. Deseja sair?"
+      );
+
+      if (!leave) return;
+    }
+    animateClose(onClose);
+  };
 
   const handleRemove = (id: string) => {
     setMembers((prev) => prev.filter((member) => member.id !== id));
@@ -35,21 +58,27 @@ export const SquadEditionModal = ({
   const handleConfirm = () => {
     const updatedSquad: Squad = { ...squad, members };
     onSave(updatedSquad);
-    onClose();
+    animateClose(onClose);
   };
 
   const leader = members.find((member) => member.role === "leader");
   const squadMembers = members.filter((member) => member.role === "member");
 
   return (
-    <Overlay>
-      <ModalWrapper>
+    <Overlay $visible={visible}>
+      <ModalWrapper $visible={visible}>
         <ModalTopWrapper>
-          <ButtonComponent icon="ep:back" size="md" onClick={onClose} />
+          <ButtonComponent
+            icon="ep:back"
+            widthSize="md"
+            heightSize="md"
+            onClick={handleClose}
+          />
           <CreateSquad>{squad.name}</CreateSquad>
           <ButtonComponent
             label="Confirmar"
-            size="md"
+            widthSize="md"
+            heightSize="md"
             onClick={handleConfirm}
           />
         </ModalTopWrapper>
