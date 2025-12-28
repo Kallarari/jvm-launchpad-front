@@ -1,12 +1,24 @@
 import styled from "styled-components";
 
-export const ScoreManagementWrap = styled.div``;
+export const ScoreManagementWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 export const MemberNameStyled = styled.div`
-  flex: 0.5;
+  display: flex;
+  flex: 1;
+  white-space: nowrap;
+
+  align-items: center;
 `;
 export const MemberPointsStyled = styled.div`
-  flex: 1.5;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex: 2;
 `;
 
 export const ScoreManagementStyled = styled.div`
