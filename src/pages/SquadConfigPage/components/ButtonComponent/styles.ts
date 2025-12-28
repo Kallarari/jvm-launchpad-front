@@ -5,7 +5,8 @@ import { theme } from "../../../../infrastructure";
 import type { ButtonSize } from "./interface";
 
 interface StyledButtonProps {
-  size: ButtonSize;
+  $widthSize: ButtonSize;
+  $heightSize: ButtonSize;
 }
 
 export const StyledIcon = styled(Icon)`
@@ -21,23 +22,22 @@ export const StyledIcon = styled(Icon)`
 export const StyledButton = styled.button<StyledButtonProps>`
   background-color: ${theme.colors.danger};
   color: ${theme.colors.white};
-  min-width: ${({ size }) => (size === "sm" ? "161px" : "223px")};
+  min-width: ${({ $widthSize }) => ($widthSize === "sm" ? "161px" : "223px")};
   width: auto;
-  height: ${({ size }) => (size === "sm" ? "46px" : "74px")};
+  height: ${({ $heightSize }) => ($heightSize === "sm" ? "46px" : "74px")};
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 30px;
-  margin: auto;
   cursor: pointer;
   border: none;
   border-radius: ${theme.borderRadius.lg};
   font-family: "Goldman", sans-serif;
-  font-size: ${({ size }) => (size === "sm" ? "16px" : "20px")};
+  font-size: ${({ $widthSize }) => ($widthSize === "sm" ? "16px" : "20px")};
   font-weight: 400;
 
   @media (max-height: 833px) {
-    height: ${({ size }) => (size === "sm" ? "43px" : "64px")};
-    font-size: ${({ size }) => (size === "sm" ? "14px" : "18px")};
+    height: ${({ $heightSize }) => ($heightSize === "sm" ? "43px" : "64px")};
+    font-size: ${({ $widthSize }) => ($widthSize === "sm" ? "14px" : "18px")};
   }
 `;
