@@ -1,5 +1,16 @@
-/*
-Nao mexam aqui :) 
-Aqui ficaram os estilos da pagina, nao os do componente.
-Os do components ficam dentro da pasta dele mesmo ou na pasta de componentes da squad (caso sejam usados em mais de uma tela/pagina)
-*/
+.main {
+  width: 100%;
+  padding-top: 150px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+@media (max-height: 1033px) {
+  .main {
+    padding-top: 30px;
+  }
+}
