@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { theme } from '../../infrastructure'; // O import está aqui
+import { theme } from '../../infrastructure';
 
 interface ButtonContainerProps {
   $variant?: 'default' | 'rounded';
@@ -16,6 +16,7 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   cursor: pointer;
   transition: filter 0.2s, transform 0.2s;
   text-transform: uppercase; 
+  text-decoration: none;
 
   &:hover {
     filter: brightness(0.9);
@@ -24,6 +25,7 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+    pointer-events: none;
   }
 
   ${({ $variant }) => {

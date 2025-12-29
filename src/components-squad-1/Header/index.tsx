@@ -33,7 +33,7 @@ export const Header = () => {
 
           <Button  
             font="goldman" 
-            size={16}
+            size={13}
             onClick={() => navigate('/login')}
           >
             LOGIN
