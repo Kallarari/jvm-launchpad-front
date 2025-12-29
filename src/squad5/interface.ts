@@ -3,7 +3,11 @@ export interface IHttpResponse<T> {
     body: T
 }
 
-
+export interface IUserMock{
+    name: string,
+    email: string,
+    
+}
 
 export interface IAcervo {
     id: number

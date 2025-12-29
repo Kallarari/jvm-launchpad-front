@@ -4,11 +4,12 @@ import { Input, InputFile } from "../../components/Input";
 import { ModalContent, ModalFooter, ModalHeader, ModalWrapperContent } from "../../components/Modal/styles";
 import { Button } from "../../components/Button";
 import { z } from "zod";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import type { IAcervo, IHttpResponse } from "../../interface";
 import { getAcervo } from "../../mock";
 import { CardsRow } from "../../components/Body/styles";
 import { SecondaryCard, TertiaryCard, Card } from "../../components/Card";
+import { AuthContext } from "../../context/authContext";
 
 const Schema = z.object({
     titulo: z.string().min(4, "Título tem que ter no minimo 5 digitos"),
@@ -35,7 +36,7 @@ export function ManageAcervo() {
         subtitulo: '',
         url: ''
     })
-
+    const auth = useContext(AuthContext)
     useEffect(() => {
         const listAcervo = async () => {
             setAcervoLista(await getAcervo())
@@ -65,6 +66,7 @@ export function ManageAcervo() {
             subtitulo: material.subtitulo
         }
         const result = Schema.safeParse(material)
+        
         const resultFile = SchemaFile.safeParse(materialFile)
 
         if (!result.success && !fileData) {
@@ -93,6 +95,7 @@ export function ManageAcervo() {
             return {
                 ...prev, [name]: value
             }
+
         })
     }
 
@@ -128,8 +131,7 @@ export function ManageAcervo() {
             setIsValid(false)
         }
     }
-    console.log(material.titulo.length)
-    console.log('console !fileData: ', !fileData)
+    console.log(auth.user?.email)
     return (
         <Body>
 
@@ -141,17 +143,18 @@ export function ManageAcervo() {
                 }
                 <TertiaryCard onClick={handleModal} />
             </CardsRow>
-
+                
             <Modal isActive={isActive}>
                 <ModalHeader  > Criar novo material de apoio </ModalHeader>
                 <ModalWrapperContent>
                     <ModalContent>
                         <Input name="titulo" title="Titulo"
-                            onChange={(event) => handleChange(event)}
+                            onChange={ handleChange}
                             helperText={
                                 errors.filter(x => x.path.includes('titulo'))
                                     .map(x => x.message).toString()}
                         />
+                        
                         <Card title={material.titulo}
                             subtitle={material.subtitulo}
                             backgroundImage={preview ? preview : undefined}

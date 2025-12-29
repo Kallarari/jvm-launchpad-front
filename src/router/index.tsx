@@ -6,6 +6,9 @@ import { Squad4Routes } from "./rotas-squad-4";
 import { Squad5Routes } from "./rotas-squad-5";
 import { Squad6Routes } from "./rotas-squad-6";
 import ExamplePage from "../pages/example-page";
+import { AcervoConteudo } from "../squad5/pages/acervoconteudo";
+import { ProtectedLayout } from "../squad5/components/ProtectedLayout";
+import { ManageAcervo } from "../squad5/pages/manageacervo";
 
 
 export const AppRouter = () => {
@@ -27,11 +30,16 @@ export const AppRouter = () => {
         <Route path="/" element={<MainLayout />}>
           {Squad4Routes()}
         </Route>
-        
-        <Route path="/" element={<MainLayout />}>
-          {Squad5Routes()}
+
+        <Route path="/" element={<Squad5Routes />}>
+          <Route path="/acervo" element={<AcervoConteudo />} />
+
+          <Route element={<ProtectedLayout />}>
+            <Route path="/acervo/manage" element={<ManageAcervo />} />
+
+          </Route>
         </Route>
-        
+
         <Route path="/" element={<MainLayout />}>
           {Squad6Routes()}
         </Route>
