@@ -9,10 +9,8 @@ export const Header = () => {
   const navigate = useNavigate();
 
   return (
-    // HeaderContainer é a barra fixa com fundo escuro
     <S.HeaderContainer>
       
-      {/* HeaderWrapper limita a largura em 1440px e centraliza */}
       <S.HeaderWrapper>
         
         <S.LogoImage 

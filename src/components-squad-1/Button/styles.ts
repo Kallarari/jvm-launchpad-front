@@ -9,15 +9,10 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  /* Aqui usamos o 'theme' do import */
   padding: ${theme.spacing.sm} ${theme.spacing.lg};
-  
   width: 100%; 
   background-color: ${theme.colors.danger};
   border: none;
-  
-  /* O cursor e transições que estavam antes */
   cursor: pointer;
   transition: filter 0.2s, transform 0.2s;
   text-transform: uppercase; 
@@ -37,7 +32,7 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
         border-radius: 50px; 
       `;
     }
-    // Shape padrão
+
     return css`
       border-radius: 0 16px 0 16px;
     `; 

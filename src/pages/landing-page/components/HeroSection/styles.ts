@@ -5,16 +5,15 @@ export const Container = styled.div`
   max-width: 1200px;
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Mantém ícones e texto centralizados verticalmente entre si */
+  align-items: center;
   padding: 40px 0;
   position: relative;
 `;
 
 export const LeftContent = styled.div`
-  max-width: 700px; /* Aumentei um pouco para caber o texto gigante */
+  max-width: 700px;
   display: flex;
   flex-direction: column;
-  /* Removi o gap grande aqui para controlar melhor manualmente */
 `;
 
 export const TagOnline = styled.div`
@@ -38,18 +37,16 @@ export const TagOnline = styled.div`
   }
 `;
 
-/* Title removido conforme solicitado */
-
 export const ButtonGroup = styled.div`
   display: flex;
   gap: 16px;
-  margin-top: 16px; /* Ajuste fino: apenas 16px de distância do título */
+  margin-top: 16px;
 `;
 
 export const RightContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 10px;
   margin-right: 40px;
 `;
 
