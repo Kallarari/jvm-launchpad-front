@@ -31,8 +31,6 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
     cursor: not-allowed;
   }
 
-  /* CORREÇÃO AQUI EMBAIXO: */
-  /* Removemos ', theme' dos parênteses. Agora ele usa o theme importado lá em cima. */
   ${({ $variant }) => {
     if ($variant === 'rounded') {
       return css`
@@ -41,7 +39,7 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
     }
     // Shape padrão
     return css`
-      border-radius: 16px 0 16px 0; 
-    `;
+      border-radius: 0 16px 0 16px;
+    `; 
   }}
 `;

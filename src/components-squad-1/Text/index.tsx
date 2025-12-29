@@ -10,7 +10,12 @@ const SIZES = {
   13: '13px',
   16: '16px',
   22: '22px',
+  24: '22px',
   32: '32px',
+  38: '38px',
+  48: '48px',
+  64: '64px',
+  70: '70px',
 };
 
 const CUSTOM_COLORS = {

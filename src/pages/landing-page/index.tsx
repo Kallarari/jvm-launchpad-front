@@ -1,48 +1,23 @@
 import { Background } from "../../components-squad-1/Background";
-import { Button } from "../../components-squad-1/Button/Button";
+import { Header } from "../../components-squad-1/Header";
+import { HeroSection } from "../../pages/landing-page/components/HeroSection";
+import { BottomSection } from "../../pages/landing-page/components/BottomSection";
 
-
-// Importações dos estilos locais
-import { 
-  Container, 
-  Content, 
-  HeroSection, 
-  Title, 
-  ButtonGroup,
-  VisualContent 
-} from './style.module';
+import * as S from './style.module';
 
 const LandingPage = () => {
   return (
-    <Container>
-        <Background />
-      <Content>
-        
-        <HeroSection>
-          {/* Tagzinha de "Sistema Online" se houver */}
-          
-          <Title>
-            Bem-vindo ao 
-            <span>JVM Launchpad</span>
-          </Title>
+    <S.Container>
+      <Background />
+      <Header />
 
-          <ButtonGroup>
-            <Button font="inter" size={16} textColor="white">
-              Cadastrar
-            </Button>
+      <S.Content>
+        <HeroSection />
 
-            <Button font="goldman" size={13} textColor="white">
-              Login
-            </Button>
-          </ButtonGroup>
-        </HeroSection>
-
-        <VisualContent>
-           {/* Aqui entrariam as imagens/cards do lado direito (JS, TS, Code Snippet) */}
-           {/* <img src="/assets/hero-illustration.png" alt="Hero" /> */}
-        </VisualContent>
-      </Content>
-    </Container>
+        <BottomSection />
+      </S.Content>
+      
+    </S.Container>
   );
 };
 

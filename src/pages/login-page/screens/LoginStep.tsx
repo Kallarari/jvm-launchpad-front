@@ -17,9 +17,9 @@ export const LoginStep = () => {
   textColor="white" 
   style={{ 
     backgroundColor: '#E31C2D', 
-    height: '56px',       /* Mesma altura do PillInput */
-    borderRadius: '14px', /* Mesmo arredondamento */
-    width: '100%',        /* Garante que ocupe a largura total do card */
+    height: '56px',       
+    borderRadius: '14px', 
+    width: '100%',        
     marginTop: '10px' 
   }}
 >

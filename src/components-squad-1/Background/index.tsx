@@ -8,10 +8,10 @@ import {
   LineSecondary
 } from './styles';
 
-import gridSvg from '../../components-squad-1/Background/Assets/grid.svg';
-import linesSvg from '../../components-squad-1/Background/Assets/line.svg';
-import glowLeftSvg from '../../components-squad-1/Background/Assets/radial-top-right.svg';
-import glowRightSvg from '../../components-squad-1/Background/Assets/radial-bottom-left.svg';
+import gridSvg from '../../components-squad-1/Assets/background-assets/grid.svg';
+import linesSvg from '../../components-squad-1/Assets/background-assets/line.svg';
+import glowLeftSvg from '../../components-squad-1/Assets/background-assets/radial-top-right.svg';
+import glowRightSvg from '../../components-squad-1/Assets/background-assets/radial-bottom-left.svg';
 
 export const Background = () => {
   return (
