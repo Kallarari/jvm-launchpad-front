@@ -37,10 +37,8 @@ export const Content = styled.main`
   padding: 0 1.5rem;
   
   display: flex;
-  flex-direction: column; /* Um bloco abaixo do outro (Hero em cima, Bottom embaixo) */
-  gap: 3rem; /* Aumentei o espaço para separar bem as seções, como no design */
-
-  /* Margem no topo para centralizar verticalmente se a tela for grande */
+  flex-direction: column;
+  gap: 3rem;
   margin-top: 8rem; 
   padding-bottom: 4rem;
 
@@ -50,31 +48,28 @@ export const Content = styled.main`
   }
 `;
 
-// AQUI ESTAVA O ERRO VISUAL: O Hero precisa ser GRID ou ROW para ficar lado a lado
+
 export const HeroSection = styled.section`
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Divide: 50% Texto | 50% Ícones */
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 2rem;
   width: 100%;
   
   @media (max-width: 900px) {
-    grid-template-columns: 1fr; /* Vira coluna em tablets/celulares */
+    grid-template-columns: 1fr;
     text-align: center;
     justify-items: center;
   }
 `;
 
-// Wrapper para o texto (Título, Descrição, Botões)
-// Se você não tiver esse wrapper no index.tsx, o grid pode quebrar. 
-// O ideal é que Title, Description e ButtonGroup estejam dentro de uma <div>
 export const HeroTextContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   
   @media (max-width: 900px) {
-    align-items: center; /* Centraliza botões no mobile */
+    align-items: center;
   }
 `;
 
@@ -85,7 +80,7 @@ export const Title = styled.h1`
   
   span {
     display: block;
-    color: #FF0036; /* Assumindo que essa é a cor de destaque */
+    color: #FF0036;
   }
 
   @media (max-width: 768px) {
@@ -114,10 +109,8 @@ export const ButtonGroup = styled.div`
 export const VisualContent = styled.div`
   position: relative;
   display: flex;
-  justify-content: flex-end; /* Empurra os ícones para a direita */
+  justify-content: flex-end;
   align-items: center;
-  
-  /* Se forem os ícones flutuantes (JS/TS), isso ajuda a organizar */
   gap: 20px; 
 
   @media (max-width: 900px) {

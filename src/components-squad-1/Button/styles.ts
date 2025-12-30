@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { theme } from '../../infrastructure'; // O import está aqui
+import { theme } from '../../infrastructure';
 
 interface ButtonContainerProps {
   $variant?: 'default' | 'rounded';
@@ -9,18 +9,14 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  /* Aqui usamos o 'theme' do import */
   padding: ${theme.spacing.sm} ${theme.spacing.lg};
-  
   width: 100%; 
   background-color: ${theme.colors.danger};
   border: none;
-  
-  /* O cursor e transições que estavam antes */
   cursor: pointer;
   transition: filter 0.2s, transform 0.2s;
   text-transform: uppercase; 
+  text-decoration: none;
 
   &:hover {
     filter: brightness(0.9);
@@ -29,6 +25,7 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+    pointer-events: none;
   }
 
   ${({ $variant }) => {
@@ -37,7 +34,7 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
         border-radius: 50px; 
       `;
     }
-    // Shape padrão
+
     return css`
       border-radius: 0 16px 0 16px;
     `; 

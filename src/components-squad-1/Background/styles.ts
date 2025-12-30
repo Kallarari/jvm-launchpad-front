@@ -16,7 +16,6 @@ export const BackgroundWrapper = styled.div`
   align-items: flex-start; 
 `;
 
-// container que simula a tela de 1920px
 export const CentralizedContainer = styled.div`
   position: relative; 
   width: 100%;

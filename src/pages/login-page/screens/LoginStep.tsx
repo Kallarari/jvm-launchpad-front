@@ -1,34 +1,66 @@
 import React from 'react';
-import * as S from '../components/styles';
-import { AuthInput } from '../components/AuthInput';
+import { Text } from '../../../components-squad-1/Text';
 import { Button } from '../../../components-squad-1/Button/Button';
+import { AuthCard } from '../components/AuthCard';
+import { AuthInput } from '../components/AuthInput';
 
-export const LoginStep = () => {
+interface LoginStepProps {
+  onForgotPassword: () => void;
+}
+
+export const LoginStep: React.FC<LoginStepProps> = ({ onForgotPassword }) => {
   return (
-    <S.LoginCardBox>
-      <AuthInput label="Usuário" type="text" placeholder="Digite seu usuário" />
-      <AuthInput label="Senha" type="password" placeholder="••••••••" />
+    <AuthCard>
+      <Text as="h1" font="goldman" size={32} color="white" weight={700}>
+        JVM Launchpad
+      </Text>
       
-      <S.ForgotLink>ESQUECI MINHA SENHA</S.ForgotLink>
-      
-<Button 
-  font="goldman" 
-  size={16} 
-  textColor="white" 
-  style={{ 
-    backgroundColor: '#E31C2D', 
-    height: '56px',       
-    borderRadius: '14px', 
-    width: '100%',        
-    marginTop: '10px' 
-  }}
->
-  FAZER LOGIN
-</Button>
-
-      <div style={{ textAlign: 'center', marginTop: '24px', color: 'white', fontSize: '12px', fontFamily: 'Goldman' }}>
-        Ainda não tem sua conta? <span style={{ color: '#E31C2D', fontWeight: 'bold', cursor: 'pointer' }}>Cadastre-se</span>
+      <div style={{ width: '100%', marginTop: '32px' }}>
+        <AuthInput 
+          label="Usuário" 
+          placeholder="Digite seu usuário" 
+        />
+        
+        <AuthInput 
+          label="Senha" 
+          type="password" 
+          placeholder="Digite sua senha" 
+        />
+        
+        <div style={{ textAlign: 'right', marginTop: '-10px', marginBottom: '30px' }}>
+          <span 
+            onClick={onForgotPassword}
+            style={{ cursor: 'pointer' }}
+          >
+            <Text as="span" font="inter" size={13} color="white" weight={400}>
+              ESQUECI MINHA SENHA
+            </Text>
+          </span>
+        </div>
       </div>
-    </S.LoginCardBox>
+
+      <Button 
+        variant="rounded" 
+        font="goldman"
+        style={{ width: '100%' }}
+      >
+        FAZER LOGIN
+      </Button>
+
+      <div style={{ marginTop: '40px', textAlign: 'center' }}>
+        <Text as="span" font="inter" size={16} color="white">
+          Ainda não tem sua conta?{' '}
+        </Text>
+        <Text 
+          as="span" 
+          font="inter" 
+          size={13} 
+          color="red" 
+          style={{ cursor: 'pointer' }}
+        >
+          Cadastre-se
+        </Text>
+      </div>
+    </AuthCard>
   );
 };

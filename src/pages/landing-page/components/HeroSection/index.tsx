@@ -13,8 +13,7 @@ export const HeroSection = () => {
       <S.LeftContent>
         <S.TagOnline>Sistema Online</S.TagOnline>
         
-        {/* Removi o marginBottom: 24px daqui para aproximar os botões */}
-        <div style={{ display: 'flex', flexDirection: 'column', marginTop: '16px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', marginTop: '15px' }}>
           <Text 
             as="span" 
             font="goldman" 

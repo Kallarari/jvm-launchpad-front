@@ -13,8 +13,8 @@ const LandingPage = () => {
 
       <S.Content>
         <HeroSection />
-
         <BottomSection />
+
       </S.Content>
       
     </S.Container>

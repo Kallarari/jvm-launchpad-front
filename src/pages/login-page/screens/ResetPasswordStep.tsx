@@ -1,26 +1,41 @@
+import React from 'react';
+import { Text } from '../../../components-squad-1/Text';
+import { Button } from '../../../components-squad-1/Button/Button';
 import { AuthCard } from '../components/AuthCard';
 import { AuthInput } from '../components/AuthInput';
-import { Button } from '../../../components-squad-1/Button/Button';
-import styled from 'styled-components';
 
-const Title = styled.h2`
-  color: #FFFFFF;
-  font-size: 18px;
-  text-align: center;
-  font-family: 'Goldman', sans-serif;
-  margin-bottom: 5px;
-`;
+interface ResetPasswordStepProps {
+  onFinish: () => void;
+}
 
-export const ResetPasswordStep = () => {
+export const ResetPasswordStep: React.FC<ResetPasswordStepProps> = ({ onFinish }) => {
   return (
     <AuthCard>
-      <Title>REDEFINIR SENHA</Title>
+      <Text as="h1" font="goldman" size={32} color="white" weight={700}>
+        NOVA SENHA
+      </Text>
       
-      <AuthInput label="Nova Senha" type="password" placeholder="••••••••" />
-      <AuthInput label="Confirmar Nova Senha" type="password" placeholder="••••••••" />
-      
-      <Button font="inter" size={16} textColor="white" style={{ backgroundColor: '#E31C2D', marginTop: '15px' }}>
-        ATUALIZAR SENHA
+      <div style={{ width: '100%', marginTop: '32px' }}>
+        <AuthInput 
+          label="Nova senha" 
+          type="password"
+          placeholder="Digite sua nova senha" 
+        />
+        
+        <AuthInput 
+          label="Confirme nova senha" 
+          type="password"
+          placeholder="Confirme a nova senha" 
+        />
+      </div>
+
+      <Button 
+        variant="rounded" 
+        font="goldman"
+        style={{ width: '100%', marginTop: '20px' }}
+        onClick={onFinish}
+      >
+        CRIAR NOVA SENHA
       </Button>
     </AuthCard>
   );
