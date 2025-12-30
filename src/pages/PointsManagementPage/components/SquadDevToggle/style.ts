@@ -14,9 +14,6 @@ export const ToggleButton = styled.div`
   display: flex;
 `;
 
-// export const BackgroundTester = styled.button`
-//   background-color: #fff;
-// `;
 export const BaseButton = styled.button<ButtonProps>`
   flex: 1 0 50%;
   box-sizing: border-box;
