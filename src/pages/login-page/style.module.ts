@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const MainContainer = styled.div`
-  width: 100%;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  align-items: center;    /* Centralização total para o círculo azul */
+  align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
@@ -12,14 +12,9 @@ export const MainContainer = styled.div`
 
 export const ContentArea = styled.div`
   position: relative;
-  z-index: 20; /* Fica acima de todos os backgrounds */
+  z-index: 20; /* Card acima das luzes do componente de background */
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-export const BackgroundElements = styled.div`
-  position: absolute;
-  inset: 0;
-  z-index: 1; /* Fundo sempre na base */
+  width: 100%;
 `;

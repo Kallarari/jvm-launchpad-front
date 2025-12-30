@@ -1,14 +1,16 @@
-import styled from 'styled-components';
+import React from 'react';
+import * as S from './styles';
+import headerLogo from '../../../components-squad-1/Assets/logo-assets/headerlogo.svg';
 
-export const AuthCard = styled.div`
-  width: 100%;
-  max-width: 450px;
-  background: #000000;
-  border: 1px solid #333; /* Sutil destaque de borda */
-  border-radius: 24px;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-`;
+export const AuthCard: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  return (
+    <S.CardContainer>
+      <img 
+        src={headerLogo} 
+        alt="JVM Launchpad" 
+        style={{ width: '220px', marginBottom: '35px' }} 
+      />
+      {children}
+    </S.CardContainer>
+  );
+};
