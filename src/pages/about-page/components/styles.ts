@@ -34,6 +34,7 @@ export const Header = styled.button<OpenProps>`
 export const IconWrapper = styled.div<OpenProps>`
   display: flex;
   align-items: center;
+  rotate: 180deg;
   justify-content: center;
   color: #FFFFFF;
   font-size: 30px;
