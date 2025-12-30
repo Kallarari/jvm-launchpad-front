@@ -7,6 +7,7 @@ export const SearchBarContainer = styled.div`
   width: 100%;
   gap: 6px;
   font-family: "Inter", sans-serif;
+  margin: 26px 0px 37px 0px;
 `;
 
 export const SearchLabel = styled.label`
