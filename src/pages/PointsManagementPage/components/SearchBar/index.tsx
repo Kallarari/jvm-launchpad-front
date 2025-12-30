@@ -1,3 +1,4 @@
+import type { SearchBarProps } from "./interface";
 import {
   SearchBarContainer,
   SearchBarWrapper,
@@ -6,12 +7,12 @@ import {
   SearchLabel,
 } from "./styles";
 
-export const SearchBar = () => {
+export const SearchBar = ({ value, onChange }: SearchBarProps) => {
   return (
     <SearchBarContainer>
       <SearchLabel>Pesquisar por nome</SearchLabel>
       <SearchBarWrapper>
-        <SearchInput />
+        <SearchInput type="text" value={value} onChange={onChange} />
         <SearchIcon icon="material-symbols:search-rounded" />
       </SearchBarWrapper>
     </SearchBarContainer>
