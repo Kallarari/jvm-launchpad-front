@@ -23,7 +23,6 @@ export const Header = () => {
           
           <Text 
             as={S.LinkAction} 
-            // href="/cadastro" 
             size={13} 
             font="goldman" 
             color="white"
@@ -34,7 +33,8 @@ export const Header = () => {
           <Button  
             font="goldman" 
             size={13}
-            onClick={() => navigate('/login')}
+            style={{ width: '60px' }}
+            to="/login"
           >
             LOGIN
           </Button>

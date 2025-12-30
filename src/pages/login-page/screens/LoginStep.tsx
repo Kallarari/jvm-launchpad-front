@@ -28,7 +28,7 @@ export const LoginStep: React.FC<LoginStepProps> = ({ onForgotPassword }) => {
             onClick={onForgotPassword}
             style={{ cursor: 'pointer' }}
           >
-            <Text as="span" font="inter" size={13} color="white" weight={400}>
+            <Text as="span" font="goldman" size={13} color="white" weight={400}>
               ESQUECI MINHA SENHA
             </Text>
           </span>
@@ -44,13 +44,13 @@ export const LoginStep: React.FC<LoginStepProps> = ({ onForgotPassword }) => {
       </Button>
 
       <div style={{ marginTop: '40px', textAlign: 'center' }}>
-        <Text as="span" font="inter" size={16} color="white">
+        <Text as="span" font="goldman" size={16} color="white">
           Ainda não tem sua conta?{' '}
         </Text>
         <Text 
           as="span" 
-          font="inter" 
-          size={13} 
+          font="goldman" 
+          size={16} 
           color="red" 
           style={{ cursor: 'pointer' }}
         >

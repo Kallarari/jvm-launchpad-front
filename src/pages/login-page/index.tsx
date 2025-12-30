@@ -12,7 +12,7 @@ const LoginPage = () => {
 
   return (
     <S.MainContainer>
-      <Background />
+      <Background variant='login'/>
       
       <S.ContentArea>
         {step === 'login' && (

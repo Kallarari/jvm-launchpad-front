@@ -4,13 +4,16 @@ import headerLogo from '../../../components-squad-1/Assets/logo-assets/headerlog
 
 export const AuthCard: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <S.CardContainer>
-      <img 
+    <S.MainWrapper>
+      <S.LogoImage
         src={headerLogo} 
         alt="JVM Launchpad" 
-        style={{ width: '220px', marginBottom: '35px' }} 
+        style={{ width: '250px' }} 
       />
-      {children}
-    </S.CardContainer>
+      
+      <S.CardContainer>
+        {children}
+      </S.CardContainer>
+    </S.MainWrapper>
   );
 };

@@ -1,12 +1,14 @@
 import * as S from './styles';
 import { Text } from "../../../../components-squad-1/Text/index"; 
+import { useNavigate } from 'react-router-dom';
 import CodeWindowSvg from '../../../../components-squad-1/Assets/codeWindow.svg';
 
 export const BottomSection = () => {
+  const navigate = useNavigate();
   return (
     <S.Container>
       <S.LinksColumn>
-        <Text font="goldman" size={24} style={{ marginBottom: '24px', color: '#fff' }}>
+        <Text as="div" font="goldman" size={24} style={{ marginBottom: '10px', color: '#fff' }}>
           Links úteis
         </Text>
         <S.LinksList>
@@ -18,7 +20,7 @@ export const BottomSection = () => {
             Classificação de Squads
           </S.LinkButton>
           
-          <S.LinkButton>
+          <S.LinkButton onClick={() => navigate('/About')}>
             Sobre o projeto
           </S.LinkButton>
           

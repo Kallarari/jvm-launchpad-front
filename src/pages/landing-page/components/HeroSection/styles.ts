@@ -6,7 +6,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 0;
+  padding: 30px 0;
   position: relative;
 `;
 
@@ -16,7 +16,30 @@ export const LeftContent = styled.div`
   flex-direction: column;
 `;
 
+export const TitleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 15px;
+  width: 100%;
+`;
+
+// 2. O segredo para a borda ficar colada no texto
+export const JvmTitle = styled.div`
+  width: fit-content; 
+  display: block;
+  
+  line-height: 0.9;
+  margin-right: -5px;
+  margin-bottom: 5px;
+  color: #E63946;
+
+  filter: drop-shadow(0 0 3px rgba(230, 57, 70, 0.8));
+  padding: 0 5px; 
+`;
+
 export const TagOnline = styled.div`
+  background-color: #141414ff;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -53,7 +76,6 @@ export const RightContent = styled.div`
 export const TechIcon = styled.div`
   width: 180px; 
   height: 180px;
-  border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,7 +84,6 @@ export const TechIcon = styled.div`
   
   &:hover {
     border-color: #E63946;
-    box-shadow: 0 0 20px rgba(230, 57, 70, 0.5);
     transform: scale(1.05);
   }
 

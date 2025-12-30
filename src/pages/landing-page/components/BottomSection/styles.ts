@@ -18,7 +18,7 @@ export const LinksColumn = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px; 
-  align-items: flex-start;
+  align-items: center;
   margin-top: 24px;
   margin-left: 20px;
 `;
@@ -52,7 +52,7 @@ export const LinkButton = styled.button`
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(230, 57, 70, 0.5);
+    box-shadow: 0 2px 12px rgba(230, 57, 70, 0.5);
   }
 `;
 
@@ -92,7 +92,6 @@ export const StartTab = styled.button`
     filter: drop-shadow(0 4px 5px rgba(253, 251, 251, 0.3));
 
   &:hover {
-    color: #FF0036;
     transform: translateY(-2px);
   }
 `;

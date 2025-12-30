@@ -1,34 +1,35 @@
+import React from 'react';
 import gridSvg from '../../components-squad-1/Assets/background-assets/grid.svg';
 import linesSvg from '../../components-squad-1/Assets/background-assets/line.svg';
 import glowLeftSvg from '../../components-squad-1/Assets/background-assets/radial-top-right.svg';
 import glowRightSvg from '../../components-squad-1/Assets/background-assets/radial-bottom-left.svg';
+import dotsSvg from '../../components-squad-1/Assets/background-assets/layer dots.png'; 
 
-import { 
-  BackgroundWrapper, 
-  CentralizedContainer, 
-  GridImg, 
-  GlowBottomLeft, 
-  GlowTopRight, 
-  LinePrimary,
-  LineSecondary
-} from './styles';
+import * as S from './styles';
 
+// Definimos os tipos de variantes possíveis
+interface BackgroundProps {
+  variant?: 'landing' | 'login'; // 'landing' é o padrão, 'login' é o novo
+}
 
-
-export const Background = () => {
+export const Background: React.FC<BackgroundProps> = ({ variant = 'landing' }) => {
   return (
-    <BackgroundWrapper>
-      <CentralizedContainer>
+    <S.BackgroundWrapper>
+      <S.CentralizedContainer>
         
-        <GlowBottomLeft src={glowLeftSvg} alt="" />
-        <GlowTopRight src={glowRightSvg} alt="" />
+        {/* Passamos a prop $variant para os estilos saberem onde posicionar */}
+        <S.GlowBottomLeft src={glowLeftSvg} alt="" $variant={variant} />
+        <S.GlowTopRight src={glowRightSvg} alt="" $variant={variant} />
 
-        <GridImg src={gridSvg} alt="" />
+        <S.GridImg src={gridSvg} alt="" $variant={variant} />
 
-        <LinePrimary src={linesSvg} alt="" />
-        <LineSecondary src={linesSvg} alt="" />
+        <S.LinePrimary src={linesSvg} alt="" $variant={variant} />
+        <S.LineSecondary src={linesSvg} alt="" $variant={variant} />
         
-      </CentralizedContainer>
-    </BackgroundWrapper>
+        {/* Só renderiza as bolinhas se for a tela de login */}
+        {variant === 'login' && <S.DotsImg src={dotsSvg} alt="" />}
+        
+      </S.CentralizedContainer>
+    </S.BackgroundWrapper>
   );
 };

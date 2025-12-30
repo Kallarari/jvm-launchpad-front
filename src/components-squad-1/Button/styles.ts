@@ -9,7 +9,7 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: ${theme.spacing.sm} ${theme.spacing.lg};
+  padding: 12px ${theme.spacing.lg};
   width: 100%; 
   background-color: ${theme.colors.danger};
   border: none;
@@ -31,12 +31,12 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   ${({ $variant }) => {
     if ($variant === 'rounded') {
       return css`
-        border-radius: 50px; 
+        border-radius: 10px; 
       `;
     }
 
     return css`
-      border-radius: 0 16px 0 16px;
+      border-radius: 2px 16px 0 16px;
     `; 
   }}
 `;
