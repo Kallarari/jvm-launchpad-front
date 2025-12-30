@@ -1,20 +1,20 @@
-import { DevButton, SquadButton, ToggleButton } from "./style";
-import type { ToggleProps } from "./interface";
+import { useState } from "react";
+import { ToggleButton, DevButton, SquadButton } from "./style";
 
-export const SquadDevToggle = ({
-  DevToggle = "Dev",
-  SquadToggle = "Squad",
-}: ToggleProps) => {
+export const SquadDevToggle = () => {
+  const [active, setActive] = useState<"dev" | "squad">("dev");
+
   return (
-    <>
-      <ToggleButton>
-        <DevButton>
-          <span>{DevToggle}</span>
-        </DevButton>
-        <SquadButton>
-          <span>{SquadToggle}</span>
-        </SquadButton>
-      </ToggleButton>
-    </>
+    <ToggleButton>
+      <SquadButton
+        $active={active === "squad"}
+        onClick={() => setActive("squad")}
+      >
+        squads
+      </SquadButton>
+      <DevButton $active={active === "dev"} onClick={() => setActive("dev")}>
+        devs
+      </DevButton>
+    </ToggleButton>
   );
 };
