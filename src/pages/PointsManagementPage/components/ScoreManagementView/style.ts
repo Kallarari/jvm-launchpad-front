@@ -6,30 +6,7 @@ export const ScoreManagementWrap = styled.div`
   align-items: center;
 `;
 
-export const MemberNameStyled = styled.div`
-  display: flex;
-  flex: 1;
-  white-space: nowrap;
-
-  align-items: center;
-`;
-export const MemberPointsStyled = styled.div`
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  flex: 2;
-`;
-
 export const ScoreManagementStyled = styled.div`
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #fff;
-
-  font-family: "Goldman", sans-serif;
-  font-weight: 400;
-  font-size: 32px;
-  text-align: center;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -39,7 +16,34 @@ export const ScoreManagementStyled = styled.div`
   padding: 0 24px;
   margin: 26px;
 
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+
+  font-family: "Goldman", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+
   border-radius: 10px;
+`;
+
+export const MemberNameStyled = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  white-space: nowrap;
+`;
+
+export const LeaderText = styled.span`
+  font-size: 12px;
+  color: rgba(230, 57, 70, 1);
+`;
+
+export const MemberPointsStyled = styled.div`
+  display: flex;
+  flex: 2;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const PointsButtonWrap = styled.label`
