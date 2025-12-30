@@ -11,11 +11,7 @@ interface LoginStepProps {
 export const LoginStep: React.FC<LoginStepProps> = ({ onForgotPassword }) => {
   return (
     <AuthCard>
-      <Text as="h1" font="goldman" size={32} color="white" weight={700}>
-        JVM Launchpad
-      </Text>
-      
-      <div style={{ width: '100%', marginTop: '32px' }}>
+      <div style={{ width: '100%', marginTop: '10px' }}>
         <AuthInput 
           label="Usuário" 
           placeholder="Digite seu usuário" 

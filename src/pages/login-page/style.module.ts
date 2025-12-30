@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  width: 100%;
-  min-height: 100vh;
+export const MainContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,16 +10,11 @@ export const Container = styled.div`
   overflow: hidden;
 `;
 
-export const Content = styled.div`
+export const ContentArea = styled.div`
   position: relative;
-  z-index: 20;
+  z-index: 20; /* Card acima das luzes do componente de background */
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-export const BackgroundElements = styled.div`
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+  width: 100%;
 `;
