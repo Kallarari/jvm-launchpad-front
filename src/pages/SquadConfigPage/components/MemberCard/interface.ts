@@ -1,6 +1,6 @@
 export interface MemberCardProps {
   name: string;
-  githubUrl: string;
+  userUrl: string;
   onRemove?: () => void;
   onMakeLeader?: () => void;
 }

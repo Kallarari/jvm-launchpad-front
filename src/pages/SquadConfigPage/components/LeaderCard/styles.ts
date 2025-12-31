@@ -41,7 +41,7 @@ export const StyledIcon = styled(Icon)`
   }
 `;
 
-export const GithubButton = styled.button`
+export const UserButton = styled.button`
   width: 70px;
   height: 46px;
   border-radius: 2px 10px 2px 10px;

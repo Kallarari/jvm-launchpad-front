@@ -1,5 +1,5 @@
 export interface LeaderCardProps {
   name: string;
-  githubUrl: string;
+  userUrl: string;
   onRemove?: () => void;
 }
