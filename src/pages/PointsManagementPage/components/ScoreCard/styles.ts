@@ -6,11 +6,12 @@ export const Wrapper = styled(BaseCard)`
   align-items: center;
   width: 100%;
   padding: 0 30px;
+  justify-content: space-between;
 `;
 
 export const Left = styled.div`
   font-size: 32px;
-  min-width: 130px;
+  flex: 1;
 `;
 
 export const Center = styled.div`
@@ -21,6 +22,7 @@ export const Center = styled.div`
 
 export const Right = styled.div`
   display: flex;
+  flex: 1;
   gap: 8px;
   min-width: 150px;
   justify-content: flex-end;
