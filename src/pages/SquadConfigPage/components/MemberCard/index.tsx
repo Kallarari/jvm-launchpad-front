@@ -4,13 +4,13 @@ import {
   MemberWrapper,
   MemberName,
   Actions,
-  GithubButton,
+  UserButton,
   StyledIcon,
 } from "./styles";
 
 export const MemberCard = ({
   name,
-  githubUrl,
+  userUrl,
   onRemove,
   onMakeLeader,
 }: MemberCardProps) => {
@@ -22,17 +22,15 @@ export const MemberCard = ({
         <ButtonComponent label="Tornar líder" onClick={onMakeLeader} />
 
         <ButtonComponent label="Remover da squad" onClick={onRemove} />
-        {/* colocar link da page do usuario dps */}
-        <GithubButton
+        {/* colocar link da page do usuario dps, quando for criado */}
+        <UserButton
           as="a"
-          href={
-            githubUrl.startsWith("http") ? githubUrl : `https://${githubUrl}`
-          }
+          href={userUrl.startsWith("http") ? userUrl : `https://${userUrl}`}
           target="_blank"
           rel="noopener noreferrer"
         >
           <StyledIcon icon="nrk:link" />
-        </GithubButton>
+        </UserButton>
       </Actions>
     </MemberWrapper>
   );

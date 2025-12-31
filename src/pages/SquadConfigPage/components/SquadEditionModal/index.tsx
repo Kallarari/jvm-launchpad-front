@@ -8,6 +8,7 @@ import { MemberCard } from "../MemberCard";
 import { SquadInfo } from "../SquadInfo";
 import { CreateSquad, ModalTopWrapper, ModalWrapper, Overlay } from "./styles";
 import type { SquadEditionModalProps } from "./interface";
+import { useNavigate } from "react-router-dom";
 
 export const SquadEditionModal = ({
   squad,
@@ -16,6 +17,7 @@ export const SquadEditionModal = ({
 }: SquadEditionModalProps) => {
   const [members, setMembers] = useState<User[]>(squad.members);
   const [visible, setVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setTimeout(() => setVisible(true), 10);
@@ -74,7 +76,7 @@ export const SquadEditionModal = ({
             heightSize="md"
             onClick={handleClose}
           />
-          <CreateSquad>{squad.name}</CreateSquad>
+          <CreateSquad>Editar {squad.name}</CreateSquad>
           <ButtonComponent
             label="Confirmar"
             widthSize="md"
@@ -88,7 +90,7 @@ export const SquadEditionModal = ({
         {leader && (
           <LeaderCard
             name={leader.name}
-            githubUrl="www.google.com"
+            userUrl="www.google.com"
             onRemove={() => handleRemove(leader.id)}
           />
         )}
@@ -97,13 +99,14 @@ export const SquadEditionModal = ({
           <MemberCard
             key={member.id}
             name={member.name}
-            githubUrl="www.google.com"
+            userUrl="www.google.com"
             onRemove={() => handleRemove(member.id)}
             onMakeLeader={() => handleMakeLeader(member.id)}
           />
         ))}
 
-        <EditSquadCard />
+        <EditSquadCard onClick={() => navigate("/squad-6-rota")} />
+        {/* Ainda nao me responderam sobre as rotas */}
       </ModalWrapper>
     </Overlay>
   );

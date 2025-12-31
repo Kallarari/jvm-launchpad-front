@@ -4,27 +4,25 @@ import {
   LeaderWrapper,
   LeaderName,
   Actions,
-  GithubButton,
   StyledIcon,
+  UserButton,
 } from "./styles";
 
-export const LeaderCard = ({ name, githubUrl, onRemove }: LeaderCardProps) => {
+export const LeaderCard = ({ name, userUrl, onRemove }: LeaderCardProps) => {
   return (
     <LeaderWrapper>
       <LeaderName>{name}</LeaderName>
 
       <Actions>
         <ButtonComponent label="Remover da squad" onClick={onRemove} />
-        <GithubButton
+        <UserButton
           as="a"
-          href={
-            githubUrl.startsWith("http") ? githubUrl : `https://${githubUrl}`
-          }
+          href={userUrl.startsWith("http") ? userUrl : `https://${userUrl}`}
           target="_blank"
           rel="noopener noreferrer"
         >
           <StyledIcon icon="nrk:link" />
-        </GithubButton>
+        </UserButton>
       </Actions>
     </LeaderWrapper>
   );
