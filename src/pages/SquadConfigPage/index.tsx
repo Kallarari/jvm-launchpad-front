@@ -1,18 +1,14 @@
-import { useEffect, useState } from "react";
-import { getSquadsMock } from "../../squad-4-src/mocks/squads.mock";
+import { useState } from "react";
 import type { Squad } from "../../squad-4-src/interfaces/squad";
 import { SquadEditionModal } from "./components/SquadEditionModal";
 import { SquadPanel } from "./components/SquadPanel";
 import { ButtonComponent } from "./components/ButtonComponent";
 import styles from "./styles.module.css";
+import { useSquads } from "../../squad-4-src/hooks/useSquads";
 
 export const SquadConfigPage = () => {
-  const [squads, setSquads] = useState<Squad[]>([]);
+  const { squads, setSquads} = useSquads();
   const [selectedSquad, setSelectedSquad] = useState<Squad | null>(null);
-
-  useEffect(() => {
-    getSquadsMock().then(setSquads);
-  }, []);
 
   const updateSquad = (updatedSquad: Squad) => {
     setSquads((prev) =>
