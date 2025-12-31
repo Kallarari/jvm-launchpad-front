@@ -105,8 +105,8 @@ export const SquadEditionModal = ({
           />
         ))}
 
-        <EditSquadCard onClick={() => navigate("/squad-6-rota")} />
-        {/* Ainda nao me responderam sobre as rotas */}
+        <EditSquadCard onClick={() => navigate("/squad-edit/:id")} />
+        {/* Rota Squad 6 */}
       </ModalWrapper>
     </Overlay>
   );

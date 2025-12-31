@@ -31,7 +31,7 @@ export const SquadConfigPage = () => {
             <ButtonComponent
               icon="mdi:plus"
               heightSize="md"
-              onClick={() => navigate("/squad-6-rota")} //Rata da squad 6 - ainda nao sabem. 
+              onClick={() => navigate("/squad-edit/:id")} //Rota Squad 6
             />
           </div>
 
