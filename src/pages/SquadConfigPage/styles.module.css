@@ -1,0 +1,16 @@
+.main {
+  width: 100%;
+  padding-top: 150px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+@media (max-height: 1033px) {
+  .main {
+    padding-top: 30px;
+  }
+}

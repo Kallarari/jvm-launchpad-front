@@ -1,0 +1,27 @@
+.main {
+  width: 100%;
+  padding-top: 82px;
+  min-height: 95dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.pageHeader__title {
+  font-size: 48px;
+  font-weight: 400;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Goldman", sans-serif;
+  width: 374px;
+  height: 130px;
+}
