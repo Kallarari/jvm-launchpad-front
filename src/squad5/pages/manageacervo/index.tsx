@@ -9,7 +9,12 @@ import type { IAcervo, IHttpResponse } from "../../interface";
 import { getAcervo } from "../../mock";
 import { CardsRow } from "../../components/Body/styles";
 import { SecondaryCard, TertiaryCard, Card } from "../../components/Card";
+import UserImage from "../../Assets/Ellipse.svg";
 import { AuthContext } from "../../context/authContext";
+import { Footer } from "../../components/Footer";
+import { Header } from "../../components/Header";
+import { Avatar, HeaderContent, HeaderWrapper, SubHeader, SubHeaderWrapper, UserBadage, UserInfo, } from "../../components/Header/styles";
+import { TitleAcervoManage } from "../../components/Title";
 
 const Schema = z.object({
     titulo: z.string().min(4, "Título tem que ter no minimo 5 digitos"),
@@ -66,7 +71,7 @@ export function ManageAcervo() {
             subtitulo: material.subtitulo
         }
         const result = Schema.safeParse(material)
-        
+
         const resultFile = SchemaFile.safeParse(materialFile)
 
         if (!result.success && !fileData) {
@@ -133,83 +138,112 @@ export function ManageAcervo() {
     }
     console.log(auth.user?.email)
     return (
-        <Body>
 
-            <CardsRow>
-                {!!acervoLista &&
-                    acervoLista.body.map(({ id, titulo, subTitulo }) =>
-                        <SecondaryCard key={id} title={titulo} subtitle={subTitulo} />
-                    )
-                }
-                <TertiaryCard onClick={handleModal} />
-            </CardsRow>
-                
-            <Modal isActive={isActive}>
-                <ModalHeader  > Criar novo material de apoio </ModalHeader>
-                <ModalWrapperContent>
-                    <ModalContent>
-                        <Input name="titulo" title="Titulo"
-                            onChange={ handleChange}
-                            helperText={
-                                errors.filter(x => x.path.includes('titulo'))
+        <>
+
+            <Header>
+                <HeaderWrapper>
+                    <HeaderContent />
+                    <UserBadage>
+                        <UserInfo>
+                            <span>Lindon Jhnson</span>
+                            <a href="/perfil">editar perfil</a>
+                        </UserInfo>
+                        <Avatar src={UserImage} alt="Lindonjhnson" />
+                    </UserBadage>
+                </HeaderWrapper>
+            </Header>
+
+            <SubHeaderWrapper>
+                <SubHeader><span>Classificação de squads</span></SubHeader>
+                <SubHeader><span>Classificação de devs</span></SubHeader>
+                <SubHeader><span>Material de apoio</span></SubHeader>
+            </SubHeaderWrapper>
+
+            <Body>
+
+                <TitleAcervoManage />
+
+                <CardsRow>
+                    {!!acervoLista &&
+                        acervoLista.body.map(({ id, titulo, subTitulo }) =>
+                            <SecondaryCard key={id} title={titulo} subtitle={subTitulo} />
+                        )
+                    }
+                    <TertiaryCard onClick={handleModal} />
+                </CardsRow>
+
+                <Modal isActive={isActive}>
+                    <ModalHeader  > Criar novo material de apoio </ModalHeader>
+                    <ModalWrapperContent>
+                        <ModalContent>
+                            <Input name="titulo" title="Titulo"
+                                onChange={handleChange}
+                                helperText={
+                                    errors.filter(x => x.path.includes('titulo'))
+                                        .map(x => x.message).toString()}
+                            />
+
+                            <Card title={material.titulo}
+                                subtitle={material.subtitulo}
+                                backgroundImage={preview ? preview : undefined}
+                            />
+
+                        </ModalContent>
+
+                        <ModalContent>
+                            <Input name='subtitulo' title="subtitulo"
+                                onChange={(event) => handleChange(event)}
+                                helperText={errors.filter(x => x.path.includes('subtitulo'))
                                     .map(x => x.message).toString()}
+                            />
+                            <InputFile type="file"
+                                name="conteudo"
+                                ref={inputRefFile}
+                                onChange={handleChangeFile}
+                            />
+                            <Button title="Fazer upload do conteúdo"
+                                onClick={abrirSeletorFile}
+                            />
+
+                            <Input name='url' title="Link do material"
+                                onChange={(event) => handleChange(event)}
+                                helperText={!fileData ?
+                                    errors.filter(x => x.path.includes('url'))
+                                        .map(x => x.message).toString()
+                                    : ''
+                                }
+                                disabled={!!fileData}
+                            />
+
+                            <InputFile type="file"
+                                name="image"
+                                accept="image/*"
+                                onChange={hendleChangeImage}
+                                ref={inputRef}
+                            />
+                            <Button title="Fazer upload da capa"
+                                onClick={abrirSeletor}
+                            />
+
+                        </ModalContent>
+
+                    </ModalWrapperContent>
+
+                    <ModalFooter >
+                        <Button title="Cancelar" onClick={handleModal} />
+                        <Button $secondary title="Salvar" disabled={!isValid}
+                            onClick={handleUpload}
                         />
-                        
-                        <Card title={material.titulo}
-                            subtitle={material.subtitulo}
-                            backgroundImage={preview ? preview : undefined}
-                        />
+                    </ModalFooter>
 
-                    </ModalContent>
+                </Modal>
 
-                    <ModalContent>
-                        <Input name='subtitulo' title="subtitulo"
-                            onChange={(event) => handleChange(event)}
-                            helperText={errors.filter(x => x.path.includes('subtitulo'))
-                                .map(x => x.message).toString()}
-                        />
-                        <InputFile type="file"
-                            name="conteudo"
-                            ref={inputRefFile}
-                            onChange={handleChangeFile}
-                        />
-                        <Button title="Fazer upload do conteúdo"
-                            onClick={abrirSeletorFile}
-                        />
+            </Body>
+            <Footer>
+                <span>all right reserved to JVM launchpad</span>
+            </Footer>
 
-                        <Input name='url' title="Link do material"
-                            onChange={(event) => handleChange(event)}
-                            helperText={!fileData ?
-                                errors.filter(x => x.path.includes('url'))
-                                    .map(x => x.message).toString()
-                                : ''
-                            }
-                            disabled={!!fileData}
-                        />
-
-                        <InputFile type="file"
-                            name="image"
-                            accept="image/*"
-                            onChange={hendleChangeImage}
-                            ref={inputRef}
-                        />
-                        <Button title="Fazer upload da capa"
-                            onClick={abrirSeletor}
-                        />
-
-                    </ModalContent>
-
-                </ModalWrapperContent>
-
-                <ModalFooter >
-                    <Button title="Cancelar" onClick={handleModal} />
-                    <Button $secondary title="Salvar" disabled={!isValid}
-                        onClick={handleUpload}
-                    />
-                </ModalFooter>
-
-            </Modal>
-
-        </Body>
+        </>
     )
 }
