@@ -137,10 +137,10 @@ export function ManageAcervo() {
             return;
         }
 
-    const novoId = Acervo.listAcervo.length > 0 
-        ? Math.max(...Acervo.listAcervo.map(item => item.id)) + 1 
+    const novoId = Acervo.listAcervo.length > 0
+        ? Math.max(...Acervo.listAcervo.map(item => item.id)) + 1
         : 1;
-    
+
     const novoMaterial: IAcervo = {
         id: novoId,
         titulo: material.titulo,
@@ -163,7 +163,6 @@ export function ManageAcervo() {
         setPreview(null);
         setIsActive(false);
     }
-
 
     }
     console.log(auth.user?.email)
