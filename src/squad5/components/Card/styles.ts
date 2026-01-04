@@ -11,7 +11,7 @@ export const CardContainer = styled.div<{backgroundImage?:string}>`
   background-repeat: no-repeat;
   box-shadow: 0 0 4px 0 #ffffff40;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   justify-content: flex-end;
   align-items: stretch;
   padding: 24px 0 0 0; 

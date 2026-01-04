@@ -29,7 +29,7 @@ export function AcervoConteudo() {
     listAcervo()
   },[])
 
-  
+
   return (
     <>
       <Header>
@@ -55,12 +55,12 @@ export function AcervoConteudo() {
         <TitleAcervo/>
 
         <CardsRow>
-          {!!acervoLista && 
-            acervoLista.body.map(({id, titulo, subTitulo}) => 
+          {!!acervoLista &&
+            acervoLista.body.map(({id, titulo, subTitulo}) =>
               <Card key={id } title={titulo} subtitle={subTitulo} />
             )
           }
-            
+
         </CardsRow>
       </BodyContainer>
       <Footer>

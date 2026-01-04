@@ -5,7 +5,7 @@ import { ModalContent, ModalFooter, ModalHeader, ModalWrapperContent } from "../
 import { Button } from "../../components/Button";
 import { z } from "zod";
 import React, { useContext, useEffect, useRef, useState } from "react";
-import type { IAcervo, IHttpResponse } from "../../interface";
+import { Acervo, type IAcervo, type IHttpResponse } from "../../interface";
 import { getAcervo } from "../../mock";
 import { CardsRow } from "../../components/Body/styles";
 import { SecondaryCard, TertiaryCard, Card } from "../../components/Card";
@@ -134,7 +134,37 @@ export function ManageAcervo() {
         if (!!material.url && !!fileData) {
             alert("Escolha entre o Link ou Upload")
             setIsValid(false)
+            return;
         }
+
+    const novoId = Acervo.listAcervo.length > 0 
+        ? Math.max(...Acervo.listAcervo.map(item => item.id)) + 1 
+        : 1;
+    
+    const novoMaterial: IAcervo = {
+        id: novoId,
+        titulo: material.titulo,
+        subTitulo: material.subtitulo,
+        url: material.url || ''
+    };
+
+    const response = Acervo.PostAcervo(novoMaterial);
+    if (response.status === 200) {
+        setAcervoLista({
+            status: 200,
+            body: [...Acervo.listAcervo]
+        });
+        setMaterial({
+            titulo: '',
+            subtitulo: '',
+            url: ''
+        });
+        setFileData(null);
+        setPreview(null);
+        setIsActive(false);
+    }
+
+
     }
     console.log(auth.user?.email)
     return (
