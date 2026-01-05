@@ -33,4 +33,4 @@ export const CardsRow = styled.div`
   gap: 24px;
   justify-content: center;
   width: 100%;
-`;
+`

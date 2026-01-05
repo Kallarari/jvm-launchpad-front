@@ -15,6 +15,7 @@ import { BodyContainer, CardsRow } from "../../components/Body/styles";
 import type { IAcervo, IHttpResponse } from "../../interface";
 import { useEffect, useState } from "react";
 import { getAcervo } from "../../mock";
+import { TitleAcervo } from "../../components/Title";
 
 
 export function AcervoConteudo() {
@@ -28,7 +29,7 @@ export function AcervoConteudo() {
     listAcervo()
   },[])
 
-  
+
   return (
     <>
       <Header>
@@ -51,13 +52,15 @@ export function AcervoConteudo() {
       </SubHeaderWrapper>
 
       <BodyContainer>
+        <TitleAcervo/>
+
         <CardsRow>
-          {!!acervoLista && 
-            acervoLista.body.map(({id, titulo, subTitulo}) => 
+          {!!acervoLista &&
+            acervoLista.body.map(({id, titulo, subTitulo}) =>
               <Card key={id } title={titulo} subtitle={subTitulo} />
             )
           }
-            
+
         </CardsRow>
       </BodyContainer>
       <Footer>
