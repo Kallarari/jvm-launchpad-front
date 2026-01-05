@@ -4,4 +4,6 @@ export interface CardProps {
   $secondary?: boolean;
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
   backgroundImage?: string
+  className?: string ;
+  children?: React.ReactNode
 }
