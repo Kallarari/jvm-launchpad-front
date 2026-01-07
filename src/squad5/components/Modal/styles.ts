@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ModalBody = styled.div<{isActive?:boolean}>`
+export const ModalBody = styled.div<{ isActive?: boolean }>`
     width: 737px;
     height: 597px;
 
@@ -66,3 +66,48 @@ export const ModalContent = styled.div`
     gap: 0.9em;
 
 `
+
+export const DividerContainer = styled.div`
+  display:flex;
+  align-items: center;
+  text-align: center; 
+  justify-content:center;
+  width: 100%;
+  margin: 20px 0;
+  position: relative;
+`;
+
+export const DividerText = styled.span`
+   
+  
+  color: #fff;
+  font-size: 16px;
+  padding: 0 10px;
+  white-space: nowrap;
+  z-index: 10;
+
+    &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 23%;
+    right: 50%;
+    margin-right: 15px; 
+    border-top: 1px solid #fff; 
+    z-index: 5;
+    width:80px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 52%; 
+    right: 0;
+    margin-left: 15px; 
+    border-top: 1px solid #fff; 
+    z-index: 5;
+    width:80px;
+  }
+  
+`;

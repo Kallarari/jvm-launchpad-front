@@ -13,6 +13,7 @@ export const ButtonWrapper = styled.div`
     flex-direction: row;
     justify-content: safe center;
     gap: 10%;
+    width:100%;
 
 `
 

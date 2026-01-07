@@ -11,11 +11,12 @@ import {
 } from "../../components/Header/styles";
 import UserImage from "../../Assets/Ellipse.svg";
 import { Card } from "../../components/Card";
-import { BodyContainer, CardsRow } from "../../components/Body/styles";
+import {  CardsRow } from "../../components/Body/styles";
 import type { IAcervo, IHttpResponse } from "../../interface";
 import { useEffect, useState } from "react";
 import { getAcervo } from "../../mock";
 import { TitleAcervo } from "../../components/Title";
+import { Body } from "../../components/Body";
 
 
 export function AcervoConteudo() {
@@ -51,7 +52,7 @@ export function AcervoConteudo() {
         <SubHeader><span>Material de apoio</span></SubHeader>
       </SubHeaderWrapper>
 
-      <BodyContainer>
+      <Body>
         <TitleAcervo/>
 
         <CardsRow>
@@ -62,7 +63,7 @@ export function AcervoConteudo() {
           }
 
         </CardsRow>
-      </BodyContainer>
+      </Body>
       <Footer>
         <span>all right reserved to JVM launchpad</span>
       </Footer>

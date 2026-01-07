@@ -1,19 +1,18 @@
 import { Body } from "../../components/Body"
 import { Modal } from "../../components/Modal";
 import { Input, InputFile } from "../../components/Input";
-import { ModalContent, ModalFooter, ModalHeader, ModalWrapperContent } from "../../components/Modal/styles";
+import { DividerContainer, DividerText, ModalContent, ModalFooter, ModalHeader, ModalWrapperContent } from "../../components/Modal/styles";
 import { Button } from "../../components/Button";
 import { z } from "zod";
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, {  useEffect, useRef, useState } from "react";
 import { Acervo, type IAcervo, type IHttpResponse } from "../../interface";
 import { getAcervo } from "../../mock";
 import { CardsRow } from "../../components/Body/styles";
 import { SecondaryCard, TertiaryCard, Card } from "../../components/Card";
 import UserImage from "../../Assets/Ellipse.svg";
-import { AuthContext } from "../../context/authContext";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
-import { Avatar, HeaderContent, HeaderWrapper, SubHeader, SubHeaderWrapper, UserBadage, UserInfo, } from "../../components/Header/styles";
+import { Avatar, HeaderContent, HeaderWrapper, UserBadage, UserInfo, } from "../../components/Header/styles";
 import { TitleAcervoManage } from "../../components/Title";
 
 const Schema = z.object({
@@ -41,7 +40,7 @@ export function ManageAcervo() {
         subtitulo: '',
         url: ''
     })
-    const auth = useContext(AuthContext)
+    // const auth = useContext(AuthContext) // para quando tiver autenticação
     useEffect(() => {
         const listAcervo = async () => {
             setAcervoLista(await getAcervo())
@@ -76,7 +75,7 @@ export function ManageAcervo() {
 
         if (!result.success && !fileData) {
             const resultError = result.error.issues
-            console.log(resultError)
+            
             setErrors(resultError)
             setIsValid(false)
         }
@@ -137,35 +136,35 @@ export function ManageAcervo() {
             return;
         }
 
-    const novoId = Acervo.listAcervo.length > 0
-        ? Math.max(...Acervo.listAcervo.map(item => item.id)) + 1
-        : 1;
+        const novoId = Acervo.listAcervo.length > 0
+            ? Math.max(...Acervo.listAcervo.map(item => item.id)) + 1
+            : 1;
 
-    const novoMaterial: IAcervo = {
-        id: novoId,
-        titulo: material.titulo,
-        subTitulo: material.subtitulo,
-        url: material.url || ''
-    };
+        const novoMaterial: IAcervo = {
+            id: novoId,
+            titulo: material.titulo,
+            subTitulo: material.subtitulo,
+            url: material.url || ''
+        };
 
-    const response = Acervo.PostAcervo(novoMaterial);
-    if (response.status === 200) {
-        setAcervoLista({
-            status: 200,
-            body: [...Acervo.listAcervo]
-        });
-        setMaterial({
-            titulo: '',
-            subtitulo: '',
-            url: ''
-        });
-        setFileData(null);
-        setPreview(null);
-        setIsActive(false);
+        const response = Acervo.PostAcervo(novoMaterial);
+        if (response.status === 200) {
+            setAcervoLista({
+                status: 200,
+                body: [...Acervo.listAcervo]
+            });
+            setMaterial({
+                titulo: '',
+                subtitulo: '',
+                url: ''
+            });
+            setFileData(null);
+            setPreview(null);
+            setIsActive(false);
+        }
+
     }
-
-    }
-    console.log(auth.user?.email)
+    
     return (
 
         <>
@@ -183,11 +182,7 @@ export function ManageAcervo() {
                 </HeaderWrapper>
             </Header>
 
-            <SubHeaderWrapper>
-                <SubHeader><span>Classificação de squads</span></SubHeader>
-                <SubHeader><span>Classificação de devs</span></SubHeader>
-                <SubHeader><span>Material de apoio</span></SubHeader>
-            </SubHeaderWrapper>
+
 
             <Body>
 
@@ -234,6 +229,11 @@ export function ManageAcervo() {
                             <Button title="Fazer upload do conteúdo"
                                 onClick={abrirSeletorFile}
                             />
+
+                            <DividerContainer>
+                                <DividerText>ou</DividerText>
+
+                            </DividerContainer>
 
                             <Input name='url' title="Link do material"
                                 onChange={(event) => handleChange(event)}
