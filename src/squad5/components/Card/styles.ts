@@ -68,6 +68,7 @@ export const CardHeaderButton = styled.button`
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
   padding: 0;
+  
 
   &:hover {
     background: #fff;
