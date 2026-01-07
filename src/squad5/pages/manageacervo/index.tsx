@@ -4,13 +4,12 @@ import { Input, InputFile } from "../../components/Input";
 import { DividerContainer, DividerText, ModalContent, ModalFooter, ModalHeader, ModalWrapperContent } from "../../components/Modal/styles";
 import { Button } from "../../components/Button";
 import { z } from "zod";
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, {  useEffect, useRef, useState } from "react";
 import { Acervo, type IAcervo, type IHttpResponse } from "../../interface";
 import { getAcervo } from "../../mock";
 import { CardsRow } from "../../components/Body/styles";
 import { SecondaryCard, TertiaryCard, Card } from "../../components/Card";
 import UserImage from "../../Assets/Ellipse.svg";
-import { AuthContext } from "../../context/authContext";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { Avatar, HeaderContent, HeaderWrapper, UserBadage, UserInfo, } from "../../components/Header/styles";
@@ -41,7 +40,7 @@ export function ManageAcervo() {
         subtitulo: '',
         url: ''
     })
-    const auth = useContext(AuthContext)
+    // const auth = useContext(AuthContext) // para quando tiver autenticação
     useEffect(() => {
         const listAcervo = async () => {
             setAcervoLista(await getAcervo())
@@ -76,7 +75,7 @@ export function ManageAcervo() {
 
         if (!result.success && !fileData) {
             const resultError = result.error.issues
-            console.log(resultError)
+            
             setErrors(resultError)
             setIsValid(false)
         }
@@ -165,7 +164,7 @@ export function ManageAcervo() {
         }
 
     }
-    console.log(auth.user?.email)
+    
     return (
 
         <>

@@ -26,7 +26,7 @@ import type { IUserMock } from "../../interface";
         })
     }
 
-    {console.log(user)}
+    
     return (
         <AuthContext.Provider value={{login, logout, user}}>
             {children}
