@@ -1,3 +1,4 @@
+
 import { fireEvent, render, screen } from '@testing-library/react'
 import { describe, it, expect, vi } from 'vitest'
 import { Button } from '.'
@@ -23,12 +24,32 @@ describe('Button component', () => {
         expect(button).toBeDisabled()
     })
 
-    it('Aplica estilo secundário quando $secondary é true', () => {
-        render(<Button title='Enviar' $secondary />)
+    it('deve verificar a cor do pseudo-elemento ::after', () => {
+        render(<Button title='Botão' />);
 
-        const button = screen.getByText('Enviar')
-        expect(button).toHaveStyle({
-            backgroundColor: '#101010'
-        })
+        expect(screen.getByRole('button')).toHaveStyleRule(
+            'background-color',
+            '#e63946',
+            { modifier: '::after' }
+        );
     })
+    it('deve aplicar a cor correta no ::after quando for secundário', () => {
+        render(<Button title='Botão' $secondary />);
+
+        expect(screen.getByRole('button')).toHaveStyleRule(
+            'background-color',
+            '#101010',
+            { modifier: '::after' } // O segredo está no modifier
+        );
+    });
+
+    it('deve ter opacidade 1 no ::before ao passar o mouse', () => {
+        render(<Button title='Botão' />);
+
+        expect(screen.getByRole('button')).toHaveStyleRule(
+            'opacity',
+            '1',
+            { modifier: '&:hover::before' }
+        );
+    });
 })
