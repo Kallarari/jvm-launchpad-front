@@ -15,10 +15,10 @@ export function useDevsSearch(devs: Dev[]) {
     return devs.filter((dev) => {
       const searchableText = `
         ${dev.name}
-        ${dev.horario}
-        ${dev.nivel}
-        ${dev.perfil}
-        ${dev.disponibilidade}
+        ${dev.preferredShift}
+        ${dev.level}
+        ${dev.profile}
+        ${dev.availability}
       `;
 
       return normalize(searchableText).includes(normalize(search));
