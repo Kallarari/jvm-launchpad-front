@@ -1,0 +1,16 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  
+}
+
+button, input {
+  border: none;
+  outline: none;
+  background: none;
+}
