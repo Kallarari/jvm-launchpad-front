@@ -15,10 +15,11 @@ import {
 
 import type { CardProps } from "./types";
 
-export const Card = ({ title, subtitle, backgroundImage }: CardProps) => (
-  <CardContainer backgroundImage={backgroundImage}>
+export const Card = ({ title, subtitle, backgroundImage, children, className }: CardProps) => (
+  <CardContainer backgroundImage={backgroundImage} className={className} data-testid="card-container">
     <CardTitle>{title}</CardTitle>
     <CardSubtitle>{subtitle}</CardSubtitle>
+    {children}
   </CardContainer>
 );
 
