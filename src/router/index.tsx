@@ -5,7 +5,7 @@ import { Squad3Routes } from "./rotas-squad-3";
 import { Squad4Routes } from "./rotas-squad-4";
 import { Squad5Routes } from "./rotas-squad-5";
 import { Squad6Routes } from "./rotas-squad-6";
-import ExamplePage from "../pages/example-page";
+import CadastroTecnicoPage from "../pages/feature-cadastro-tecnico";
 
 export const AppRouter = () => {
   return (
@@ -35,7 +35,7 @@ export const AppRouter = () => {
           {Squad6Routes()}
         </Route>
 
-        <Route path="/example" element={<ExamplePage />} />
+        <Route path="/cadastroTecnico" element={<CadastroTecnicoPage />} />
       </Routes>
     </BrowserRouter>
   );
