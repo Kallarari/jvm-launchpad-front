@@ -11,16 +11,40 @@ export const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/*" element={<ExamplePage />} />
-        <Route path="/" element={<Squad1Routes />} />
-        <Route path="/" element={<Squad2Routes />} />
-        <Route path="/" element={<Squad3Routes />} />
-        <Route path="/" element={<Squad4Routes />} />
-        <Route path="/" element={<Squad5Routes />} />
+        <Route path="/" element={<MainLayout />}>
+          {Squad1Routes()}
+        </Route>
+
+        <Route path="/" element={<MainLayout />}>
+          {Squad2Routes()}
+        </Route>
+
+        <Route path="/" element={<MainLayout />}>
+          {Squad3Routes()}
+        </Route>
+
+        <Route path="/" element={<MainLayout />}>
+          {Squad4Routes()}
+        </Route>
+        
+        <Route path="/" element={<MainLayout />}>
+          {Squad5Routes()}
+        </Route>
+        
+        <Route path="/squad-6/*" element={<MainLayout />}>
+          {Squad6Routes()}
+        </Route>
+
         <Route path="/example" element={<ExamplePage />} />
-        <Route path="/squad-6/*" element={<Squad6Routes />} />
       </Routes>
     </BrowserRouter>
   );
 };
 
+const MainLayout = () => {
+  return (
+    <>
+      <Outlet />
+    </>
+  );
+};
