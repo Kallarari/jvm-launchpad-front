@@ -35,3 +35,13 @@ export interface Squad {
   createdAt: string;
   updatedAt: string;
 }
+
+// types/cadastro.ts
+export interface CadastroFormData {
+  nome: string;
+  email: string;
+  telefone: string;
+  perfil: 'analitico' | 'executor';
+  nivel: 'junior' | 'pleno' | 'senior';
+  senha: string;
+}
