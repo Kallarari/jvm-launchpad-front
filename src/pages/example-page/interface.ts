@@ -8,3 +8,9 @@ export interface ExamplePageData {
   description?: string;
 }
 
+export interface ExamplePageContextType {
+  data: ExamplePageData | null;
+  setData: (data: ExamplePageData | null) => void;
+  isLoading: boolean;
+  setIsLoading: (loading: boolean) => void;
+}
