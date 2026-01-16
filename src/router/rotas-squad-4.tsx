@@ -1,10 +1,12 @@
-import { Route } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom';
+import ExamplePage from '../pages/example-page';
+
 
 export const Squad4Routes = () => {
   return (
-    <>
-      <Route path="/Squad" element={<h1>Squad exemple page</h1>} />
-      <Route path="/Squad-exemple" element={<h1>Squad exemple page</h1>} />
-    </>
+    <Routes>
+      <Route path="/example" element={<ExamplePage />} />
+    </Routes>
   );
 };
+
