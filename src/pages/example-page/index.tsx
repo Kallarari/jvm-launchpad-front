@@ -1,7 +1,8 @@
-import { ComponentExample } from './components/component-exemple';
-import { ExamplePageProvider, useExamplePageContext } from './context';
-import { Container, Title, Content, Description } from './styles.module';
 import { Icon } from '@iconify/react';
+import { ComponentExample } from './components/component-exemple';
+import { SquadsDevPageProvider } from './context';
+import { useExamplePageContext } from './mock';
+import { Container, Content, Description, Title } from './styles.module';
 
 const ExamplePageContent = () => {
   const { data, isLoading } = useExamplePageContext();
@@ -30,13 +31,10 @@ const ExamplePageContent = () => {
   );
 };
 
-const ExamplePage = () => {
+export default function ExamplePage() {
   return (
-    <ExamplePageProvider>
+    <SquadsDevPageProvider>
       <ExamplePageContent />
-    </ExamplePageProvider>
+    </SquadsDevPageProvider>
   );
 };
-
-export default ExamplePage;
-

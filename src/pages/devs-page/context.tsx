@@ -1,13 +1,13 @@
 import { useState, type ReactNode } from 'react';
-import type { ExamplePageData } from './interface';
-import { ExamplePageContext } from './mock';
+import type { SquadsPageData } from '../squads-page/interface';
+import { SquadsDevPageContext } from './mock';
 
 export const SquadsDevPageProvider = ({ children }: { children: ReactNode }) => {
-  const [data, setData] = useState<ExamplePageData | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [data, setData] = useState<SquadsPageData | null>(null);
 
   return (
-    <ExamplePageContext.Provider
+    <SquadsDevPageContext.Provider
       value={{
         data,
         setData,
@@ -16,6 +16,6 @@ export const SquadsDevPageProvider = ({ children }: { children: ReactNode }) => 
       }}
     >
       {children}
-    </ExamplePageContext.Provider>
+    </SquadsDevPageContext.Provider>
   );
 };
