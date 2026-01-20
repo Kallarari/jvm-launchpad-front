@@ -1,11 +1,11 @@
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
+import ExamplePage from "../pages/example-page";
 import { Squad1Routes } from "./rotas-squad-1";
 import { Squad2Routes } from "./rotas-squad-2";
 import { Squad3Routes } from "./rotas-squad-3";
 import { Squad4Routes } from "./rotas-squad-4";
 import { Squad5Routes } from "./rotas-squad-5";
 import { Squad6Routes } from "./rotas-squad-6";
-import ExamplePage from "../pages/example-page";
 
 export const AppRouter = () => {
   return (
@@ -26,12 +26,12 @@ export const AppRouter = () => {
         <Route path="/" element={<MainLayout />}>
           {Squad4Routes()}
         </Route>
-        
+
         <Route path="/" element={<MainLayout />}>
           {Squad5Routes()}
         </Route>
-        
-        <Route path="/" element={<MainLayout />}>
+
+        <Route path="/squad-6" element={<MainLayout />}>
           {Squad6Routes()}
         </Route>
 
