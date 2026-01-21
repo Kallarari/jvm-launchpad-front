@@ -3,6 +3,9 @@ import { SquadEditProvider } from "../pages/squad-edit/context";
 import SquadEditPage from "../pages/squad-edit";
 import { useAppStore } from "../infrastructure/store";
 import { GlobalStyle } from "../pages/squad-edit/styles.module";
+import RankingSquadsPage from "../pages/ranking-pages/squads-page";
+import RankingDevsPage from "../pages/ranking-pages/devs-page";
+import { NewDevsPage } from "../pages/NewDevs";
 
 const AdminRoutes = () => {
   const user = useAppStore((state) => state.user);
@@ -18,11 +21,13 @@ export const Squad6Routes = () => {
   return (
     <>
       {/* Rotas públicas */}
+      <Route path="/ranking-squads" element={<RankingSquadsPage />} />
+      <Route path="/ranking-devs" element={<RankingDevsPage />} />
+
       <Route path="/unauthorized" element={<div>Acesso não autorizado</div>} />
 
       {/* Rotas admin */}
       <Route element={<AdminRoutes />}>
-        {/* Rota squad edit */}
         <Route
           path="/squad-edit/:id"
           element={
@@ -33,7 +38,15 @@ export const Squad6Routes = () => {
           }
         />
 
-        {/* Rota new devs */}
+        <Route
+          path="/new-devs"
+          element={
+            <>
+              <GlobalStyle />
+              <NewDevsPage />
+            </>
+          }
+        />
       </Route>
     </>
   );
