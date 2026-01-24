@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text } from '../../../components-squad-1/Text';
-import { Button } from '../../../components-squad-1/Button/Button';
+import { Text } from '../../../squad1-files/components/Text';
+import { Button } from '../../../squad1-files/components/Button/Button';
 import { AuthCard } from '../components/AuthCard';
 import { AuthInput } from '../components/AuthInput';
 

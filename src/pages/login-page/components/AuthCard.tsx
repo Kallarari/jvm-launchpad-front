@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './styles';
-import headerLogo from '../../../components-squad-1/Assets/logo-assets/headerlogo.svg';
+import headerLogo from '../../../squad1-files/Assets/logo-assets/headerlogo.svg';
 
 export const AuthCard: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (

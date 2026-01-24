@@ -1,7 +1,7 @@
 import type { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from 'react';
 import { Link, type LinkProps } from 'react-router-dom';
 import { ButtonContainer } from './styles';
-import { Text } from '../../components-squad-1/Text/index'; 
+import { Text } from '../Text/index'; 
 
 type ButtonTypes = ButtonHTMLAttributes<HTMLButtonElement> & AnchorHTMLAttributes<HTMLAnchorElement> & Partial<LinkProps>;
 

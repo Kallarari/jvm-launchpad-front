@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../../../components-squad-1/Button/Button';
+import { Button } from '../../../squad1-files/components/Button/Button';
 import { AuthCard } from '../components/AuthCard';
 import { AuthInput } from '../components/AuthInput';
 

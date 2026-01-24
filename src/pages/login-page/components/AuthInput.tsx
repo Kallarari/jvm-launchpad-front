@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text } from '../../../components-squad-1/Text';
+import { Text } from '../../../squad1-files/components/Text';
 import * as S from './styles';
 
 interface AuthInputProps {

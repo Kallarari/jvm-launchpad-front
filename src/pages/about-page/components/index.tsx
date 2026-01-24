@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import * as S from './styles';
-import { Text } from '../../../components-squad-1/Text/index';
+import { Text } from '../../../squad1-files/components/Text/index';
 
 interface AccordionItemProps {
   title: string;

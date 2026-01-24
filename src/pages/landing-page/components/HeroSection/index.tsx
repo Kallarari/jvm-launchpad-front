@@ -1,10 +1,10 @@
 import * as S from './styles';
-import { Button } from "../../../../components-squad-1/Button/Button";
-import { Text } from "../../../../components-squad-1/Text/index";
+import { Button } from "../../../../squad1-files/components/Button";
+import { Text } from "../../../../squad1-files/components/Text";
 
-import JsIcon from '../../../../components-squad-1/Assets/logo-assets/jslogo.svg';
-import TsIcon from '../../../../components-squad-1/Assets/logo-assets/tslogo.svg';
-import NodeIcon from '../../../../components-squad-1/Assets/logo-assets/nodelogo.svg';
+import JsIcon from '../../../../squad1-files/Assets/logo-assets/jslogo.svg';
+import TsIcon from '../../../../squad1-files/Assets/logo-assets/tslogo.svg';
+import NodeIcon from '../../../../squad1-files/Assets/logo-assets/nodelogo.svg';
 
 export const HeroSection = () => {
   return (

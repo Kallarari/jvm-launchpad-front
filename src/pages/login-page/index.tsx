@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import * as S from './style.module';
+import * as S from './styles.module';
 
-import { Background } from '../../components-squad-1/Background';
+import { Background } from '../../squad1-files/components/Background';
 
 import { LoginStep } from './screens/LoginStep';
 import { ForgotPasswordStep } from './screens/ForgotPasswordStep';

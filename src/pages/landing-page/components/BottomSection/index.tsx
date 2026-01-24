@@ -1,7 +1,7 @@
 import * as S from './styles';
-import { Text } from "../../../../components-squad-1/Text/index"; 
+import { Text } from "../../../../squad1-files/components/Text"; 
 import { useNavigate } from 'react-router-dom';
-import CodeWindowSvg from '../../../../components-squad-1/Assets/codeWindow.svg';
+import CodeWindowSvg from '../../../../squad1-files/Assets/codeWindow.svg';
 
 export const BottomSection = () => {
   const navigate = useNavigate();

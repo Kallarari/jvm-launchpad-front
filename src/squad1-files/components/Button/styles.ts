@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { theme } from '../../infrastructure';
+import { theme } from '../../../infrastructure';
 
 interface ButtonContainerProps {
   $variant?: 'default' | 'rounded';

@@ -2,7 +2,7 @@ import { Route, Outlet } from "react-router-dom";
 import LandingPage from "../pages/landing-page";
 import AboutPage from "../pages/about-page";
 import LoginPage from "../pages/login-page";
-import { SquadFontLoader } from "../components-squad-1/SquadFontLoader";
+import { SquadFontLoader } from "../squad1-files/SquadFontLoader";
 
 const SquadLayout = () => {
   return (

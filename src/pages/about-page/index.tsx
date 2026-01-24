@@ -1,9 +1,9 @@
-import { Background } from "../../components-squad-1/Background";
-import { Header } from "../../components-squad-1/Header";
-import { Text } from "../../components-squad-1/Text/";
+import { Background } from "../../squad1-files/components/Background";
+import { Header } from "../../squad1-files/components/Header";
+import { Text } from "../../squad1-files/components/Text";
 import { AccordionItem } from "../about-page/components/index"; 
 
-import * as S from './style.module';
+import * as S from './styles.module';
 
 const AboutPage = () => {
   return (

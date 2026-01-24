@@ -1,15 +1,14 @@
 import React from 'react';
-import gridSvg from '../../components-squad-1/Assets/background-assets/grid.svg';
-import linesSvg from '../../components-squad-1/Assets/background-assets/line.svg';
-import glowLeftSvg from '../../components-squad-1/Assets/background-assets/radial-top-right.svg';
-import glowRightSvg from '../../components-squad-1/Assets/background-assets/radial-bottom-left.svg';
-import dotsSvg from '../../components-squad-1/Assets/background-assets/layer dots.png'; 
+import gridSvg from '../../Assets/background-assets/grid.svg';
+import linesSvg from '../../Assets/background-assets/line.svg';
+import glowLeftSvg from '../../Assets/background-assets/radial-top-right.svg';
+import glowRightSvg from '../../Assets/background-assets/radial-bottom-left.svg';
+import dotsSvg from '../../Assets/background-assets/layer dots.png'; 
 
 import * as S from './styles';
 
-// Definimos os tipos de variantes possíveis
 interface BackgroundProps {
-  variant?: 'landing' | 'login'; // 'landing' é o padrão, 'login' é o novo
+  variant?: 'landing' | 'login';
 }
 
 export const Background: React.FC<BackgroundProps> = ({ variant = 'landing' }) => {
