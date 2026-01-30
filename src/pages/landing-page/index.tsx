@@ -1,9 +1,9 @@
-import { Background } from "../../components-squad-1/Background";
-import { Header } from "../../components-squad-1/Header";
+import { Background } from "../../squad1-files/components/Background/";
+import { Header } from "../../squad1-files/components/Header";
 import { HeroSection } from "../../pages/landing-page/components/HeroSection";
 import { BottomSection } from "../../pages/landing-page/components/BottomSection";
 
-import * as S from './style.module';
+import * as S from './styles.module';
 
 const LandingPage = () => {
   return (

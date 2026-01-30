@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import * as S from './styles';
 
-import { Button } from '../../components-squad-1/Button/Button'; 
-import { Text } from '../../components-squad-1/Text/'; 
-import LogoAsset from '../../components-squad-1/Assets/logo-assets/headerlogo.svg'; 
+import { Button } from '../Button'; 
+import { Text } from '../Text'; 
+import LogoAsset from '../../Assets/logo-assets/headerlogo.svg'
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -23,7 +23,6 @@ export const Header = () => {
           
           <Text 
             as={S.LinkAction} 
-            // href="/cadastro" 
             size={13} 
             font="goldman" 
             color="white"
@@ -34,7 +33,8 @@ export const Header = () => {
           <Button  
             font="goldman" 
             size={13}
-            onClick={() => navigate('/login')}
+            style={{ width: '60px' }}
+            to="/login"
           >
             LOGIN
           </Button>

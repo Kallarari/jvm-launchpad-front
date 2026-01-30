@@ -1,22 +1,34 @@
-import React from 'react';
-import * as S from './style.module';
-import { Background } from "../../components-squad-1/Background"; // O componente oficial que você citou
-import { LoginStep } from './screens/LoginStep';
+import { useState } from 'react';
+import * as S from './styles.module';
 
-const LoginPage: React.FC = () => {
+import { Background } from '../../squad1-files/components/Background';
+
+import { LoginStep } from './screens/LoginStep';
+import { ForgotPasswordStep } from './screens/ForgotPasswordStep';
+import { ResetPasswordStep } from './screens/ResetPasswordStep';
+
+const LoginPage = () => {
+  const [step, setStep] = useState<'login' | 'forgot' | 'reset'>('login');
+
   return (
     <S.MainContainer>
-      <Background /> 
-
+      <Background variant='login'/>
+      
       <S.ContentArea>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '32px' }}>
-          <div style={{ width: '24px', height: '24px', backgroundColor: '#E31C2D', transform: 'rotate(45deg)' }} />
-          <span style={{ color: 'white', fontFamily: 'Goldman', fontSize: '1.8rem', textTransform: 'uppercase' }}>
-            JVM Launchpad
-          </span>
-        </div>
+        {step === 'login' && (
+          <LoginStep onForgotPassword={() => setStep('forgot')} />
+        )}
+        
+        {step === 'forgot' && (
+          <ForgotPasswordStep 
+            onBackToLogin={() => setStep('login')} 
+            onSendEmail={() => setStep('reset')} 
+          />
+        )}
 
-        <LoginStep />
+        {step === 'reset' && (
+          <ResetPasswordStep onFinish={() => setStep('login')} />
+        )}
       </S.ContentArea>
     </S.MainContainer>
   );

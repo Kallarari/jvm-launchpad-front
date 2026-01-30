@@ -1,10 +1,10 @@
 import * as S from './styles';
-import { Button } from "../../../../components-squad-1/Button/Button";
-import { Text } from "../../../../components-squad-1/Text/index";
+import { Button } from "../../../../squad1-files/components/Button";
+import { Text } from "../../../../squad1-files/components/Text";
 
-import JsIcon from '../../../../components-squad-1/Assets/logo-assets/jslogo.svg';
-import TsIcon from '../../../../components-squad-1/Assets/logo-assets/tslogo.svg';
-import NodeIcon from '../../../../components-squad-1/Assets/logo-assets/nodelogo.svg';
+import JsIcon from '../../../../squad1-files/Assets/logo-assets/jslogo.svg';
+import TsIcon from '../../../../squad1-files/Assets/logo-assets/tslogo.svg';
+import NodeIcon from '../../../../squad1-files/Assets/logo-assets/nodelogo.svg';
 
 export const HeroSection = () => {
   return (
@@ -12,8 +12,8 @@ export const HeroSection = () => {
 
       <S.LeftContent>
         <S.TagOnline>Sistema Online</S.TagOnline>
-        
-        <div style={{ display: 'flex', flexDirection: 'column', marginTop: '15px' }}>
+
+        <S.TitleWrapper>
           <Text 
             as="span" 
             font="goldman" 
@@ -27,29 +27,32 @@ export const HeroSection = () => {
             Bem-vindo ao
           </Text>
 
-          <Text 
-            as="span" 
-            font="goldman" 
-            size={70}
-            color="#E63946"
-            style={{ 
-              lineHeight: '0.9',
-              marginRight: '-5px',
-              marginBottom: '5px',
-            }}
-          >
-            JVM Launchpad
-          </Text>
-        </div>
+          <S.JvmTitle>
+            <Text 
+              as="div" 
+              font="goldman" 
+              size={70}
+              color="#E63946"
+              style={{ 
+                lineHeight: '0.9',
+                marginRight: '-5px',
+                marginBottom: '5px',
+              }}
+            >
+              JVM Launchpad
+            </Text>
+          </S.JvmTitle>
+          
+          <S.ButtonGroup>
+            <Button to="/cadastrar" size={13} font="goldman" style={{ width: '160px' }}>
+              CADASTRAR
+            </Button>
+            <Button to="/login" size={13} font="goldman" style={{ width: '160px' }}>
+              LOGIN
+            </Button>
+          </S.ButtonGroup>
 
-        <S.ButtonGroup>
-          <Button size={13} font="goldman" style={{ width: '200px' }}>
-            CADASTRAR
-          </Button>
-          <Button size={13} font="goldman" style={{ width: '200px' }}>
-            LOGIN
-          </Button>
-        </S.ButtonGroup>
+        </S.TitleWrapper>
       </S.LeftContent>
 
       <S.RightContent>

@@ -1,40 +1,35 @@
+import React from 'react';
+import { Button } from '../../../squad1-files/components/Button/Button';
 import { AuthCard } from '../components/AuthCard';
 import { AuthInput } from '../components/AuthInput';
-import { Button } from '../../../components-squad-1/Button/Button';
-import styled from 'styled-components';
 
-const Description = styled.p`
-  color: #FFFFFF;
-  font-size: 14px;
-  text-align: center;
-  margin-bottom: 10px;
-  line-height: 1.4;
-`;
+interface ForgotPasswordStepProps {
+  onBackToLogin: () => void;
+  onSendEmail: () => void;
+}
 
-const BackToLogin = styled.span`
-  color: #E31C2D;
-  font-size: 12px;
-  text-align: center;
-  cursor: pointer;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-top: 10px;
-`;
-
-export const ForgotPasswordStep = () => {
+export const ForgotPasswordStep: React.FC<ForgotPasswordStepProps> = ({ 
+  onSendEmail 
+}) => {
   return (
     <AuthCard>
-      <Description>
-        Insira seu e-mail cadastrado para receber as instruções de recuperação.
-      </Description>
-      
-      <AuthInput label="E-mail" type="email" placeholder="seuemail@exemplo.com" />
-      
-      <Button font="inter" size={16} textColor="white" style={{ backgroundColor: '#E31C2D', marginTop: '10px' }}>
+      <div style={{ width: '100%', marginTop: '10px' }}>
+        <AuthInput 
+          label="E-mail" 
+          placeholder="Digite seu e-mail cadastrado" 
+        />
+        
+        <div style={{ marginBottom: '30px' }} /> 
+      </div>
+
+      <Button 
+        variant="rounded" 
+        font="goldman"
+        style={{ width: '100%' }}
+        onClick={onSendEmail}
+      >
         ENVIAR LINK
       </Button>
-
-      <BackToLogin>Voltar para o Login</BackToLogin>
     </AuthCard>
   );
 };

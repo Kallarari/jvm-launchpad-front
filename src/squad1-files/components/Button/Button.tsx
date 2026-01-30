@@ -1,10 +1,11 @@
 import type { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from 'react';
+import { Link, type LinkProps } from 'react-router-dom';
 import { ButtonContainer } from './styles';
-import { Text } from '../../components-squad-1/Text/index'; 
+import { Text } from '../Text/index'; 
 
-type ButtonTypes = ButtonHTMLAttributes<HTMLButtonElement> & AnchorHTMLAttributes<HTMLAnchorElement>;
+type ButtonTypes = ButtonHTMLAttributes<HTMLButtonElement> & AnchorHTMLAttributes<HTMLAnchorElement> & Partial<LinkProps>;
 
-interface ButtonProps extends Partial<ButtonTypes> {
+interface ButtonProps extends ButtonTypes {
   children: ReactNode;
   variant?: 'default' | 'rounded';
   isLoading?: boolean;
@@ -12,6 +13,7 @@ interface ButtonProps extends Partial<ButtonTypes> {
   font?: 'inter' | 'goldman';
   size?: 13 | 16 | 22 | 32;
   href?: string;
+  to?: string;
 }
 
 export function Button({ 
@@ -22,13 +24,15 @@ export function Button({
   font = 'inter', 
   size = 16,
   href,
+  to, 
   ...props 
 }: ButtonProps) {
-  const tagType = href ? 'a' : 'button';
+  const Component = to ? Link : (href ? 'a' : 'button');
   
  return (
     <ButtonContainer 
-      as={tagType}
+      as={Component}
+      to={to}
       href={href}
       $variant={variant} 
       disabled={isLoading || props.disabled}

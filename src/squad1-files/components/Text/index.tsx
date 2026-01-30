@@ -1,5 +1,5 @@
 import React from 'react';
-import { theme } from '../../infrastructure/theme/index';
+import { theme } from '../../../infrastructure/theme/index';
 
 const FONT_FAMILIES = {
   inter: "'Inter', sans-serif",
