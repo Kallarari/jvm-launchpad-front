@@ -12,7 +12,7 @@ export const theme = {
     black: '#000000',
   },
   fonts: {
-    primary: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif",
+    primary: "'Inter', -apple-system, BlinkMacSystemFont, 'Goldman', 'Segoe UI', 'Roboto', sans-serif",
     secondary: "'Georgia', serif",
   },
   fontSizes: {
